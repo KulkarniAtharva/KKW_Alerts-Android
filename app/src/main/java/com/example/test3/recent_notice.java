@@ -31,7 +31,6 @@ public class recent_notice extends AppCompatActivity
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
     ImageButton imageButton;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
     {
@@ -51,13 +50,16 @@ public class recent_notice extends AppCompatActivity
                 {
                     String k = childsnapshot.getKey();
                     noticeid = childsnapshot.getRef().getParent().getKey();
-
-                    if (k.contentEquals("Date"))
+                    //Toast.makeText(recent_notice.this, noticeid, Toast.LENGTH_SHORT).show();
+                    if (k.contentEquals("Date")) {
                         date = childsnapshot.getValue(String.class);
-                    if (k.contentEquals("Name"))
+                    }
+                    if (k.contentEquals("Name")) {
                         sender = childsnapshot.getValue(String.class);
-                    if (k.contentEquals("Text"))
+                    }
+                    if (k.contentEquals("Text")) {
                         notice = childsnapshot.getValue(String.class);
+                    }
                 }
 
                 ((RecentNoticeViewCreator)recyclerView.getAdapter()).update(date,sender,notice,noticeid);
@@ -107,10 +109,8 @@ public class recent_notice extends AppCompatActivity
         actionBar.setBackgroundDrawable(colorDrawable);
         actionBar.setTitle("Recent Notice");
 
-        getWindow().setStatusBarColor(getResources().getColor(R.color.green, this.getTheme()));
-
-        actionBar.setDisplayHomeAsUpEnabled(true);      // For back button to be displayed on toolbar
-
 
     }
+
+
 }

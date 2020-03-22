@@ -1,7 +1,7 @@
-#Sun Mar 22 20:25:17 IST 2020
-base.0=C\:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+#Sun Mar 22 21:24:46 IST 2020
+base.0=D\:\\Project Backup\\KKW_Alerts\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.1=D\:\\Project Backup\\KKW_Alerts\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
