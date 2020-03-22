@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="This app has been developed to make TEACHER-STUDENT interaction easier which include uploading of assignment by teacher and downloading by student."
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:text="Also contains the feature for teacher to mark attendance in class and viewing of attendance for students."
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="  Developers : "
+        android:textSize="25dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text=" 1. ATHARVA KULKARNI"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="@string/txtCredits1"
+        android:autoLink="web"
+        android:linksClickable="true"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text=" 2. ADWAIT GONDHALEKAR"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="@string/txtCredits2"
+        android:autoLink="web"
+        android:linksClickable="true"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text=" 3. SHREYA KEDIA"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="@string/txtCredits3"
+        android:autoLink="web"
+        android:linksClickable="true"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text=" 4. RADHA MUJUMDAR"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="@string/txtCredits4"
+        android:autoLink="web"
+        android:linksClickable="true"
+        />
+
+</LinearLayout>

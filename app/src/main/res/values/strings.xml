@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">KKW Alerts</string>
+    <string name="txtCredits1">https://www.linkedin.com/in/atharva-kulkarni-146279187/</string>
+    <string name="txtCredits2">https://www.linkedin.com/in/adwait-gondhalekar-a37387191/</string>
+    <string name="txtCredits3">https://www.linkedin.com/in/shreya-kedia-3a24aa1a4/</string>
+    <string name="txtCredits4">https://www.linkedin.com/in/radha-mujumdar-b978b3173/</string>
+    <string name="open">Open navigation</string>
+    <string name="close">Close navigation</string>
+
+</resources>

@@ -1,0 +1,318 @@
+[
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_kkw_logo.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\kkw_logo.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logout.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\logout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_download.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\download.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_recent.jpg.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\recent.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_stud_attendance.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\stud_attendance.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_book.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable-v24\\book.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\raw_fireworks.json.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\raw\\fireworks.json"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_upload.jpg.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\upload.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_graduation.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable-v24\\graduation.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_report.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\report.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_password.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\password.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_internet.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable-v24\\internet.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_assignment.jpg.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\assignment.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_recent_reminder.jpg.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\recent_reminder.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_teacher_activity.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\teacher_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_copybook.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable-v24\\copybook.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_upload.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\upload.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_kkw_logo1.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\kkw_logo1.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_person_outline_black_24dp.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\ic_person_outline_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_delete.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\delete.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_rate.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\rate.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_item2.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\item2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_item.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\anim_animation.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\anim\\animation.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_browser.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable-v24\\browser.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_school.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable-v24\\school.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_send_black_24dp.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\ic_send_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_lock_outline_black_24dp.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\ic_lock_outline_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_reminder1.jpg.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\reminder1.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_main.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\menu\\menu_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_about.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\about.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\menu_navigation_menu.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\menu\\navigation_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_circle2.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable-v24\\circle2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_student_attendance.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\student_attendance.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_custom_progressbar.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\custom_progressbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_navigation_header.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\navigation_header.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_circle.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable-v24\\circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_person.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\person.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_student_erp_login.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\student_erp_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_share.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\share.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rate.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\rate.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_background.jpg.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\background.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_item3.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\item3.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_bg.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable-v24\\bg.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_custombutton.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable-v24\\custombutton.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_recent_notice.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\recent_notice.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_notice.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\notice.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_upload_successful.jpg.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\upload_successful.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\raw_material_wave_loading.json.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\raw\\material_wave_loading.json"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_horn.jpg.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\horn.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_recent_assignment.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\recent_assignment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_timetable.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable-v24\\timetable.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_reminder.jpg.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\reminder.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_bookshelf.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable-v24\\bookshelf.png"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_show_notice.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\show_notice.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_about.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\about.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_student_activity.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\student_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\drawable_report.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\drawable\\report.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\layout_custom_toast.xml.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\layout\\custom_toast.xml"
+    },
+    {
+        "merged": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Atharva\\Desktop\\Test3-20200321T201846Z-001\\Test3\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    }
+]
