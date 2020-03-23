@@ -122,6 +122,16 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
         SetGivenDate(yr,m,d);
 
         mView = new CatLoadingView();
+
+        actionBar.setDisplayHomeAsUpEnabled(true);      // For back button to be displayed on toolbar
+    }
+
+    // For back button on toolbar
+    @Override
+    public boolean onSupportNavigateUp()
+    {
+        onBackPressed();
+        return true;
     }
 
     /*@Override
@@ -208,7 +218,6 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
                 Calendar.getInstance().get(Calendar.YEAR),
                 Calendar.getInstance().get(Calendar.MONTH),
                 Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
-
         );
         datePickerDialog.show();
     }
@@ -252,10 +261,6 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
                             @Override
                             public void onSuccess(Uri downloadUrl)
                             {
-                                //do something with downloadurl
-                                //url = downloadUrl.toString();
-                                //url = "Atharva";
-                                //ask.
                                 url = downloadUrl.toString();
 
                                 final DatabaseReference reference = database.getReference();      //return the path to the root
@@ -336,6 +341,8 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
             @Override
             public void onProgress(UploadTask.TaskSnapshot taskSnapshot)
             {
+                Toast.makeText(upload.this, "Atharva", Toast.LENGTH_SHORT).show();
+
                 //Track the progress of = Our upload...........
                 //int currentprogress = (int)(100*taskSnapshot.getBytesTransferred()/taskSnapshot.getTotalByteCount());
 
@@ -374,7 +381,7 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
                     }
                 },100);*/
 
-                mView.show(getSupportFragmentManager(), "");
+                //mView.show(getSupportFragmentManager(), "");
             }
         });
     }
@@ -415,9 +422,7 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
             notification.setText("Selected file is : " + data.getData().getLastPathSegment());
         }
         else
-        {
             Toast.makeText(this, "Please select a file", Toast.LENGTH_SHORT).show();
-        }
     }
 
     @Override
@@ -450,4 +455,3 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
         startActivityForResult(Intent.createChooser(intent,));
     }*/
 }
-

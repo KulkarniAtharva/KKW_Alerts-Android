@@ -1451,6 +1451,7 @@ drawable internet
 drawable kkw_logo
 drawable kkw_logo1
 drawable logout
+drawable message
 drawable mouse
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
@@ -1483,9 +1484,12 @@ drawable reminder
 drawable reminder1
 drawable report
 drawable school
+drawable send
 drawable share
+drawable subject
 drawable test_custom_background
 drawable timetable
+drawable title
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable upload
@@ -1647,6 +1651,7 @@ id forever
 id framge_container
 id ghost_view
 id ghost_view_holder
+id given_dat
 id given_date
 id gone
 id graduallyTextView
@@ -1800,6 +1805,7 @@ id src_over
 id standard
 id start
 id stretch
+id subject
 id submenuarrow
 id submit_area
 id tabMode
@@ -1830,7 +1836,6 @@ id title
 id titleDividerNoCustom
 id title_template
 id tool_Bar
-id toolbar
 id top
 id topPanel
 id touch_outside

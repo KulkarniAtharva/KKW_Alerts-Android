@@ -191,11 +191,13 @@ public class teacher_activity extends AppCompatActivity implements NavigationVie
     }
     void report()
     {
-
+        Intent intent = new Intent(this, report.class);
+        startActivity(intent);
     }
     void rate()
     {
-
+        Intent intent = new Intent(this, rate.class);
+        startActivity(intent);
     }
     void share()
     {

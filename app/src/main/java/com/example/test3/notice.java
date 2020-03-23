@@ -30,6 +30,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -56,7 +57,7 @@ public class notice extends AppCompatActivity implements View.OnClickListener
     String noticetime;
     String teacher_name;
     String notice;
-    EditText editText;
+    TextInputEditText textInputEditText;
     String date;
    // FirebaseUser user;
     String user_email;
@@ -78,7 +79,7 @@ public class notice extends AppCompatActivity implements View.OnClickListener
         button = (Button)findViewById(R.id.sendbtn);
         button.setOnClickListener(this);
 
-        editText = (EditText)findViewById(R.id.notice);
+        textInputEditText = (TextInputEditText) findViewById(R.id.notice);
 
         teacher_name = MyObjects.getInstance().firebaseuser.getDisplayName();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -113,7 +114,7 @@ public class notice extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View v)
     {
-        notice = editText.getText().toString();
+        notice = textInputEditText.getText().toString();
         DatabaseReference databaseReference = firebaseDatabase.getReference();
         noticetime = System.currentTimeMillis()+"";
 
@@ -181,7 +182,7 @@ public class notice extends AppCompatActivity implements View.OnClickListener
         }
     }
 
-    // Send
+    // Send notice to teacher of successfull notice sent
     //create notification channel if you target android 8.0 or higher version
      private void createNotificationChannel()
     {

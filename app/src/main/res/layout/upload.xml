@@ -15,25 +15,23 @@
         android:orientation="horizontal">
 
         <com.google.android.material.textfield.TextInputLayout
-        	            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        	            android:layout_width="match_parent"
-        	            android:layout_height="wrap_content"
-        	            android:hint="Label"
+        	            android:layout_width="350dp"
+        	            android:layout_height="100dp"
+                        android:layout_marginLeft="15dp"
+        	            android:hint="Title"
+                        android:textColorHint="@color/green"
         	            app:counterEnabled="true"
-        	            app:counterMaxLength="10"
-        	            app:endIconDrawable="@drawable/horn"
+        	            app:counterMaxLength="50"
+                        app:endIconDrawable="@drawable/title"
         	            app:endIconMode="custom"
         	            app:errorEnabled="true"
-        	            app:helperText="Helper Text"
-                        app:helperTextEnabled="true"
-        	            app:startIconDrawable="@drawable/horn">
+        	            app:helperText="Title of Assignment"
+                        app:helperTextEnabled="true">
 
         	            <com.google.android.material.textfield.TextInputEditText
         	                android:layout_width="match_parent"
         	                android:layout_height="wrap_content" />
-        	        </com.google.android.material.textfield.TextInputLayout>
-
-
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
@@ -51,10 +49,11 @@
             android:layout_weight="1"
             android:text="GIVEN DATE :-"
             android:textSize="20dp"
-            android:textStyle="bold|italic" />
+            android:textStyle="bold|italic"
+            android:id="@+id/given_date"/>
 
         <TextView
-            android:id="@+id/given_date"
+            android:id="@+id/given_dat"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_gravity="center_horizontal"

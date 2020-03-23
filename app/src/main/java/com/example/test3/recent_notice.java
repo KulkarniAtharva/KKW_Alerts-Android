@@ -109,7 +109,17 @@ public class recent_notice extends AppCompatActivity
         actionBar.setBackgroundDrawable(colorDrawable);
         actionBar.setTitle("Recent Notice");
 
+        getWindow().setStatusBarColor(getResources().getColor(R.color.green, this.getTheme()));
 
+        actionBar.setDisplayHomeAsUpEnabled(true);      // For back button to be displayed on toolbar
+    }
+
+    // For back button on toolbar
+    @Override
+    public boolean onSupportNavigateUp()
+    {
+        onBackPressed();
+        return true;
     }
 
 

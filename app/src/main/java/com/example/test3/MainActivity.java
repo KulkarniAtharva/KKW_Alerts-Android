@@ -87,7 +87,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     // Task completed successfully
                     InstanceIdResult authResult = task.getResult();
                     String fcmToken = authResult.getToken();
-                } else {
+                }
+                else {
                     // Task failed with an exception
                     Exception exception = task.getException();
                 }

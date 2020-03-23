@@ -30,6 +30,7 @@
         <activity android:name=".download"/>
         <activity android:name=".about"/>
         <activity android:name=".report"/>
+        <activity android:name=".rate"/>
         <activity android:name=".notice"/>
         <activity android:name=".show_notice"/>
         <activity android:name=".student_erp_login"/>
