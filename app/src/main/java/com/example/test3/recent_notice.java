@@ -121,6 +121,4 @@ public class recent_notice extends AppCompatActivity
         onBackPressed();
         return true;
     }
-
-
 }

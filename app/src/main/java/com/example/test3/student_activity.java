@@ -14,15 +14,20 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class student_activity extends AppCompatActivity implements View.OnClickListener
+public class student_activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
     MainActivity obj= new MainActivity();
    // MyObjects ob = new MyObjects();
@@ -31,6 +36,10 @@ public class student_activity extends AppCompatActivity implements View.OnClickL
     TextView textView;
     GridLayout gridLayout;
     String personName;
+    Toolbar toolbar;
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
     {
@@ -55,18 +64,52 @@ public class student_activity extends AppCompatActivity implements View.OnClickL
         gridLayout = (GridLayout)findViewById(R.id.grid);
         setSingleEvent(gridLayout);
 
-        //Toast.makeText(this,  Toast.LENGTH_SHORT).show();
+        //if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+        //{
+        getWindow().setStatusBarColor(getResources().getColor(R.color.green, this.getTheme()));
+        // }
+        //else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+        //{
+        //    getWindow().setStatusBarColor(getResources().getColor(R.color.colorAccentDark_light));
+        // }
 
-        ActionBar actionBar = getSupportActionBar();
+        toolbar = findViewById(R.id.tool_Bar);
+        setSupportActionBar(toolbar);
 
-        // Define ColorDrawable object and parse color using parseColor method with color hash code as its parameter
-        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#0F9D58"));
+        /*  need to set this in android manifest otherwise error comes as
 
-        // Set BackgroundDrawable
-        actionBar.setBackgroundDrawable(colorDrawable);
+            Do not request Window.FEATURE_SUPPORT_ACTION_BAR and set windowActionBar to false in your theme to use a toolbar instead
+
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        */
+
+
+        drawerLayout = findViewById(R.id.drawerlayout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout,toolbar, R.string.open, R.string.close);
+
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        navigationView = findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
+    {
+        switch (menuItem.getItemId())
+        {
+            case R.id.about:    about();  break;
+            case R.id.report:   report();   break;
+            case R.id.rate:   rate(); break;
+            case R.id.share:   share();  break;
+            case R.id.logout:   signOut();  break;
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
         getMenuInflater().inflate(R.menu.menu_main,menu);
@@ -79,11 +122,6 @@ public class student_activity extends AppCompatActivity implements View.OnClickL
 
         return true;
     }
-
-   /* private Object menuIconWithText(Drawable drawable)
-    {
-
-    }*/
 
 
     @Override
@@ -99,7 +137,7 @@ public class student_activity extends AppCompatActivity implements View.OnClickL
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     private void setSingleEvent(GridLayout gridLayout)
     {
@@ -138,11 +176,13 @@ public class student_activity extends AppCompatActivity implements View.OnClickL
     }
     void report()
     {
-
+        Intent intent = new Intent(this, report.class);
+        startActivity(intent);
     }
     void rate()
     {
-
+        Intent intent = new Intent(this, rate.class);
+        startActivity(intent);
     }
     void share()
     {
@@ -151,19 +191,6 @@ public class student_activity extends AppCompatActivity implements View.OnClickL
         sendIntent.putExtra(Intent.EXTRA_TEXT, "Hey check out my app at: App link   " + BuildConfig.APPLICATION_ID);
         sendIntent.setType("text/plain");
         startActivity(sendIntent);
-    }
-
-    @Override
-    public void onClick(View v)
-    {
-        //switch(v.getId())
-        //{
-         //   case R.id.sign_out:
-
-                signOut();
-                //finish();
-         //       break;
-        //}
     }
 
     void download()
@@ -223,5 +250,10 @@ public class student_activity extends AppCompatActivity implements View.OnClickL
     {
         if(account==null)
             Toast.makeText(this, "Sign out successful", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }

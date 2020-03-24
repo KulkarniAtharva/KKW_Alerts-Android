@@ -99,16 +99,15 @@ public class teacher_activity extends AppCompatActivity implements NavigationVie
        // }
 
        toolbar = findViewById(R.id.tool_Bar);
-        	        setSupportActionBar(toolbar);
+       setSupportActionBar(toolbar);
 
         	        drawerLayout = findViewById(R.id.drawerlayout);
-        	        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout,toolbar,
-                               R.string.open, R.string.close);
+        	        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout,toolbar, R.string.open, R.string.close);
 
         	        drawerLayout.addDrawerListener(toggle);
-                toggle.syncState();
+        	        toggle.syncState();
 
-        	        navigationView = findViewById(R.id.navigation_view);
+                navigationView = findViewById(R.id.navigation_view);
                 navigationView.setNavigationItemSelectedListener(this);
     }
 

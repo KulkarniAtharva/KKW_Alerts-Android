@@ -40,7 +40,9 @@
         <activity
             android:name="com.example.test3.teacher_activity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name="com.example.test3.student_activity" />
+        <activity
+            android:name="com.example.test3.student_activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name="com.example.test3.upload" />
         <activity android:name="com.example.test3.download" />
         <activity android:name="com.example.test3.about" />

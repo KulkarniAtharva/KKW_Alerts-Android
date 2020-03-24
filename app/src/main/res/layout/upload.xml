@@ -30,7 +30,8 @@
 
         	            <com.google.android.material.textfield.TextInputEditText
         	                android:layout_width="match_parent"
-        	                android:layout_height="wrap_content" />
+        	                android:layout_height="wrap_content"
+                            android:id="@+id/title"/>
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
@@ -43,20 +44,20 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:text="GIVEN DATE :-"
             android:textSize="20dp"
-            android:textStyle="bold|italic"
-            android:id="@+id/given_date"/>
+            android:textColor="@color/green"
+            android:textStyle="bold|italic" />
 
         <TextView
-            android:id="@+id/given_dat"
+            android:id="@+id/given_date"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:textAlignment="center" />
 
@@ -71,20 +72,25 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:text="DUE DATE :-"
             android:textSize="20dp"
+            android:textColor="@color/green"
             android:textStyle="bold|italic" />
 
         <TextView
-            android:id="@+id/due_date"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
-            android:text="SELECT DATE"
-            android:textAlignment="center" />
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/due_date_txt" />
+        <ImageButton
+            android:id="@+id/due_date_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="60dp"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"
+            android:src="@drawable/calendar"/>
 
     </LinearLayout>
 
@@ -93,7 +99,7 @@
         android:layout_width="330dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="80dp"
         android:background="#F40707"
         android:shadowColor="#b16262"
         android:text="CHOOSE ASSIGNMENT"
@@ -110,6 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
+        android:text="No file chosen"
         android:textSize="15dp" />
 
     <ru.katso.livebutton.LiveButton
@@ -136,16 +143,29 @@
         android:layout_marginTop="50dp" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/progress_horizontal"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="60dp"
-        android:indeterminate="false"
-        android:max="100"
-        android:progress="0"
-        android:progressDrawable="@drawable/custom_progressbar"
-        android:secondaryProgress="0" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:paddingLeft="20dp"
+        android:layout_margin="16dp"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/value123"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/value123"
+        android:text="%" />
+    </RelativeLayout>
 
 </LinearLayout>

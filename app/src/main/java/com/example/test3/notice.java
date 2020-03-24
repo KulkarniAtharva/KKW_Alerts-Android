@@ -1,7 +1,9 @@
 package com.example.test3;
 
+import android.app.AlertDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.DialogInterface;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -114,89 +116,125 @@ public class notice extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View v)
     {
-        notice = textInputEditText.getText().toString();
-        DatabaseReference databaseReference = firebaseDatabase.getReference();
-        noticetime = System.currentTimeMillis()+"";
+        // Create the object of AlertDialog Builder class
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        databaseReference.child("Notices").child(teacher_name).child(noticetime).child("Date").setValue(date);
-        databaseReference.child("Notices").child(teacher_name).child(noticetime).child("Name").setValue(teacher_name);
-        databaseReference.child("Notices").child(teacher_name).child(noticetime).child("Text").setValue(notice);
+        // Set the message show for the Alert time
+        builder.setMessage("Are you sure you want to send this notice ?");
 
-        Toast.makeText(this, "Notice Successfully Sent!!!", Toast.LENGTH_SHORT).show();
+        // Set Alert Title
+        builder.setTitle("Confirmation !");
 
-        sendNotification(teacher_name, notice);
+        // Set Cancelable true for when the user clicks on the outside the Dialog Box then it will close
+        builder.setCancelable(true);
 
-        // To send notification to teacher about successfully uploaded file
+        // Set the positive button with yes name OnClickListener method is use of DialogInterface interface.
 
-        createNotificationChannel();
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID);
-        builder.setSmallIcon(R.drawable.horn);
-        builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.horn));
-        builder.setContentTitle("Notice Sent Successfully");
-        builder.setStyle(new NotificationCompat.BigTextStyle().bigText(notice));
-        builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        builder.setPositiveButton("Yes",new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                notice = textInputEditText.getText().toString();
+                DatabaseReference databaseReference = firebaseDatabase.getReference();
+                noticetime = System.currentTimeMillis() + "";
 
-        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
-        notificationManagerCompat.notify(NOTIFICATION_ID, builder.build());
-    }
+                databaseReference.child("Notices").child(teacher_name).child(noticetime).child("Date").setValue(date);
+                databaseReference.child("Notices").child(teacher_name).child(noticetime).child("Name").setValue(teacher_name);
+                databaseReference.child("Notices").child(teacher_name).child(noticetime).child("Text").setValue(notice);
 
-    private void sendNotification(String mHeading, String mBody)
-    {
-            FirebaseMessaging.getInstance().subscribeToTopic("NOTIFICATIONS");
+                Toast.makeText(notice.this, "Notice Successfully Sent!!!", Toast.LENGTH_SHORT).show();
+
+                sendNotification(teacher_name, notice);
+
+                // To send notification to teacher about successfully uploaded file
+
+                createNotificationChannel();
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID);
+                builder.setSmallIcon(R.drawable.horn);
+                builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.horn));
+                builder.setContentTitle("Notice Sent Successfully");
+                builder.setStyle(new NotificationCompat.BigTextStyle().bigText(notice));
+                builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+                NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
+                notificationManagerCompat.notify(NOTIFICATION_ID, builder.build());
+
+            }
+
+            private void sendNotification(String mHeading, String mBody) {
+                FirebaseMessaging.getInstance().subscribeToTopic("NOTIFICATIONS");
 
 // init request
-        requestQueue = Volley.newRequestQueue(notice.this);
+                requestQueue = Volley.newRequestQueue(notice.this);
 
-        JSONObject mainObject = new JSONObject();
-        try {
-            mainObject.put( "to" , "/topics/" + "NOTIFICATIONS" );
-            JSONObject notificationObject = new JSONObject();
-            notificationObject.put( "title" ,mHeading);
-            notificationObject.put( "body" ,mBody);
-            mainObject.put( "notification" ,notificationObject);
-            JsonObjectRequest request = new
-                    JsonObjectRequest(Request.Method. POST , Url ,
-                            mainObject, new Response.Listener<JSONObject>() {
-                        @Override
-                        public void onResponse(JSONObject response) {
-                            // send successfully
-                        }
-                    }, new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            // failed
-                        }
-                    }
-                    ){
-                        @Override
-                        public Map<String, String> getHeaders() throws AuthFailureError {
-                            Map<String,String> header = new HashMap<>();
-                            header.put( "content-type" , "application/json" );
-                            header.put( "authorization" , "key=AIzaSyBt-7syrkRRd9Vc7k6-gNjbvuXNbh6wo4Y" );
-                            return header;
-                        }
-                    };
-            requestQueue.add(request);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
+                JSONObject mainObject = new JSONObject();
+                try {
+                    mainObject.put("to", "/topics/" + "NOTIFICATIONS");
+                    JSONObject notificationObject = new JSONObject();
+                    notificationObject.put("title", mHeading);
+                    notificationObject.put("body", mBody);
+                    mainObject.put("notification", notificationObject);
+                    JsonObjectRequest request = new
+                            JsonObjectRequest(Request.Method.POST, Url,
+                                    mainObject, new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    // send successfully
+                                }
+                            }, new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    // failed
+                                }
+                            }
+                            ) {
+                                @Override
+                                public Map<String, String> getHeaders() throws AuthFailureError {
+                                    Map<String, String> header = new HashMap<>();
+                                    header.put("content-type", "application/json");
+                                    header.put("authorization", "key=AIzaSyBt-7syrkRRd9Vc7k6-gNjbvuXNbh6wo4Y");
+                                    return header;
+                                }
+                            };
+                    requestQueue.add(request);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
 
-    // Send notice to teacher of successfull notice sent
-    //create notification channel if you target android 8.0 or higher version
-     private void createNotificationChannel()
-    {
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O)
+            // Send notice to teacher of successfull notice sent
+            //create notification channel if you target android 8.0 or higher version
+            private void createNotificationChannel() {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    CharSequence name = "BigTextStyle Notification";
+                    String description = "Include all the BigTextStyle notification";
+                    int importance = NotificationManager.IMPORTANCE_DEFAULT;
+
+                    NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, name, importance);
+                    notificationChannel.setDescription(description);
+
+                    NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                    notificationManager.createNotificationChannel(notificationChannel);
+                }
+            }
+        });
+
+        // Set the Negative button with No name OnClickListener method is use of DialogInterface interface.
+        builder.setNegativeButton("No",new DialogInterface.OnClickListener()
         {
-            CharSequence name = "BigTextStyle Notification";
-            String description = "Include all the BigTextStyle notification";
-            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+                @Override
+                public void onClick(DialogInterface dialog, int which)
+                {
+                        // If user click no then dialog box is canceled.
+                        dialog.cancel();
+                }
+        });
 
-            NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID,name,importance);
-            notificationChannel.setDescription(description);
+        // Create the Alert dialog
+        AlertDialog alertDialog = builder.create();
 
-            NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-            notificationManager.createNotificationChannel(notificationChannel);
-        }
+        // Show the Alert Dialog box
+        alertDialog.show();
     }
 }

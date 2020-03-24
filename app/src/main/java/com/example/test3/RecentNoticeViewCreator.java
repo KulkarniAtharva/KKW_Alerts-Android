@@ -71,7 +71,6 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
         holder.Content.setText(notices.get(position));
         //holder.Noticeid.setText(noticesids.get(position));
 
-
         holder.imageButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -81,11 +80,8 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
 
                 //Toast.makeText(context, notices.get(position), Toast.LENGTH_SHORT).show();
 
-                // Create the object of
-                // AlertDialog Builder class
-                AlertDialog.Builder builder
-                        = new AlertDialog
-                        .Builder(context);
+                // Create the object of AlertDialog Builder class
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
                 // Set the message show for the Alert time
                 builder.setMessage("Are you sure you want to delete this notice ?");
@@ -93,26 +89,16 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
                 // Set Alert Title
                 builder.setTitle("Confirmation !");
 
-                // Set Cancelable false
-                // for when the user clicks on the outside
-                // the Dialog Box then it will remain show
-                builder.setCancelable(false);
+                // Set Cancelable true for when the user clicks on the outside the Dialog Box then it will close
+                builder.setCancelable(true);
 
-                // Set the positive button with yes name
-                // OnClickListener method is use of
-                // DialogInterface interface.
+                // Set the positive button with yes name OnClickListener method is use of DialogInterface interface.
 
-                builder
-                        .setPositiveButton(
-                                "Yes",
-                                new DialogInterface
-                                        .OnClickListener() {
-
+                builder.setPositiveButton("Yes",new DialogInterface.OnClickListener()
+                {
                                     @Override
-                                    public void onClick(DialogInterface dialog,
-                                                        int which)
+                                    public void onClick(DialogInterface dialog,int which)
                                     {
-
                                         // When the user click yes button
                                         final String notice = notices.get(position);
                                         final String sender = senders.get(position);

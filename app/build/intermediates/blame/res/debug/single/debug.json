@@ -76,6 +76,10 @@
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\drawable\\reminder1.jpg"
     },
     {
+        "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_calendar.jpg.flat",
+        "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\drawable-v24\\calendar.jpg"
+    },
+    {
         "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_bg.png.flat",
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\drawable-v24\\bg.png"
     },

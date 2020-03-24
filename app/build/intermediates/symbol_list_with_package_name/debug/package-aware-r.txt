@@ -1394,6 +1394,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable calendar
 drawable cat
 drawable circle
 drawable circle2
@@ -1578,6 +1579,8 @@ id beginning
 id blocking
 id bottom
 id btnLogin
+id btn_cancel
+id btn_okay
 id buttonPanel
 id calc
 id cancel_button
@@ -1626,7 +1629,8 @@ id direct
 id disableHome
 id drawerlayout
 id dropdown_menu
-id due_date
+id due_date_btn
+id due_date_txt
 id edit_query
 id end
 id enterAlways
@@ -1651,7 +1655,6 @@ id forever
 id framge_container
 id ghost_view
 id ghost_view_holder
-id given_dat
 id given_date
 id gone
 id graduallyTextView
@@ -1847,12 +1850,14 @@ id transition_transform
 id txtAttendance
 id txtPassword
 id txtUsername
+id txt_input
 id unchecked
 id uniform
 id unlabeled
 id up
 id upload
 id useLogo
+id value123
 id vertical
 id view_offset_helper
 id visible

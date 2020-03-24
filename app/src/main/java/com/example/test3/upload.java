@@ -1,9 +1,12 @@
 package com.example.test3;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -21,9 +24,12 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,6 +47,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -68,8 +75,9 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
     FirebaseAuth mAuth;
     FirebaseUser user;
     String filename;
-    EditText editText;
-    TextView progresspercent,givendate,duedate;
+    TextInputEditText textInputEditText;
+    TextView progresspercent,givendate,duedate_txt;
+    ImageButton duedate_btn;
      String title,url,given_d,due_d;
      int progress = 0;
      Handler handler;
@@ -101,9 +109,12 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
         notification = findViewById(R.id.notification);
 
         givendate = (TextView) findViewById(R.id.given_date);
-        givendate.setOnClickListener(this);
-        duedate = (TextView) findViewById(R.id.due_date);
-        duedate.setOnClickListener(this);
+
+        duedate_txt = (TextView)findViewById(R.id.due_date_txt);
+        duedate_btn = (ImageButton) findViewById(R.id.due_date_btn);
+        duedate_btn.setOnClickListener(this);
+
+        textInputEditText = (TextInputEditText)findViewById(R.id.title);
 
         getWindow().setStatusBarColor(getResources().getColor(R.color.green, this.getTheme()));
 
@@ -185,13 +196,13 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
                 if (pdfuri != null)   //the user has selected a file
                 {
                     uploadfile(pdfuri);
-                    title = editText.getText().toString();
+                    title = textInputEditText.getText().toString();
                 }
                 else
                     Toast.makeText(this, "Select a file!!", Toast.LENGTH_SHORT).show();
                 break;
             }
-            case R.id.due_date:
+            case R.id.due_date_btn:
                 {
                 showDatePickerDialog();
                 break;
@@ -221,8 +232,7 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
         );
         datePickerDialog.show();
     }
-    private void uploadfile(final Uri pdfuri)
-    {
+    private void uploadfile(final Uri pdfuri) {
         /*Progress Bar code
 
          progressBar = new ProgressBar(this);
@@ -237,41 +247,33 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
         //final String filename = pdfuri.getLastPathSegment().toString();
         String path = pdfuri.getPath();
 
-         if(path!=null)
-         {
-             filename = path.substring(path.lastIndexOf('/'), path.lastIndexOf('.'));
-             //final String filename1 = System.currentTimeMillis()+"";
-         }
+        if (path != null) {
+            filename = path.substring(path.lastIndexOf('/'), path.lastIndexOf('.'));
+            //final String filename1 = System.currentTimeMillis()+"";
+        }
 
         final StorageReference storageReference = storage.getReference().child("Uploads").child(u_name).child(filename);   // returns root path of the database
         storageReference.putFile(pdfuri)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>()
-                {
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot)
-                    {
-                      // String url = taskSnapshot.getStorage().getDownloadUrl().toString();  //return the url of the uploaded file
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        // String url = taskSnapshot.getStorage().getDownloadUrl().toString();  //return the url of the uploaded file
 
                         /*String url = storageReference.getDownloadUrl().getResult().toString();*/
 
                         //String url;
 
-                        storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>()
-                        {
+                        storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                             @Override
-                            public void onSuccess(Uri downloadUrl)
-                            {
+                            public void onSuccess(Uri downloadUrl) {
                                 url = downloadUrl.toString();
 
                                 final DatabaseReference reference = database.getReference();      //return the path to the root
                                 //String url = taskSnapshot.getStorage().child("Uploads").child(u_name).child(filename).getDownloadUrl().toString();
-                                reference.child("Uploads").child(filename).child("Assignment Url").setValue(url).addOnCompleteListener(new OnCompleteListener<Void>()
-                                {
+                                reference.child("Uploads").child(filename).child("Assignment Url").setValue(url).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
-                                    public void onComplete(@NonNull Task<Void> task)
-                                    {
-                                        if(task.isSuccessful())
-                                        {
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
                                             reference.child("Uploads").child(filename).child("Title").setValue(title);
                                             reference.child("Uploads").child(filename).child("Given Date").setValue(given_d);
                                             reference.child("Uploads").child(filename).child("Due Date").setValue(due_d);
@@ -285,18 +287,17 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
 
                                             Toast toast = new Toast(getApplicationContext());
                                             toast.setDuration(Toast.LENGTH_SHORT);
-                                            toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
-                                            toast.setView(getLayoutInflater().inflate(R.layout.custom_toast,(ViewGroup)findViewById(R.id.custom_toast)));
+                                            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                                            toast.setView(getLayoutInflater().inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.custom_toast)));
                                             toast.show();
-                                        }
-                                        else
+                                        } else
                                             Toast.makeText(upload.this, "File Not Uploaded", Toast.LENGTH_LONG).show();
                                     }
                                 });
                             }
                         });
 
-                       // String url = "SAk";
+                        // String url = "SAk";
                         //Toast.makeText(upload.this,temp.toString() , Toast.LENGTH_LONG).show();
 
                         /*storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>()
@@ -317,7 +318,6 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
                         //String url = storageReference.child("Uploads").child(u_name).child(filename).getDownloadUrl().toString();
 
 
-
                         // To send notification to teacher about successfully uploaded file
                         createNotificationChannel();
                         NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID);
@@ -329,22 +329,18 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
                         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
                         notificationManagerCompat.notify(NOTIFICATION_ID, builder.build());
                     }
-                }).addOnFailureListener(new OnFailureListener()
-        {
+                }).addOnFailureListener(new OnFailureListener() {
             @Override
-            public void onFailure(@NonNull Exception e)
-            {
+            public void onFailure(@NonNull Exception e) {
                 Toast.makeText(upload.this, "File Not Uploaded hi", Toast.LENGTH_SHORT).show();
             }
-        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>()
-        {
+        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
             @Override
-            public void onProgress(UploadTask.TaskSnapshot taskSnapshot)
-            {
-                Toast.makeText(upload.this, "Atharva", Toast.LENGTH_SHORT).show();
-
+            public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
                 //Track the progress of = Our upload...........
-                //int currentprogress = (int)(100*taskSnapshot.getBytesTransferred()/taskSnapshot.getTotalByteCount());
+                int currentprogress = (int) (100 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
+
+                Toast.makeText(upload.this, Integer.toString(currentprogress), Toast.LENGTH_SHORT).show();
 
                 /*for(int j=0;j<33;j++)
                 {
@@ -363,7 +359,7 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
                     progress++;
                 }*/
 
-               /* handler = new Handler();
+                /*handler = new Handler();
                 handler.postDelayed(new Runnable()
                 {
                     @Override
@@ -383,7 +379,59 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
 
                 //mView.show(getSupportFragmentManager(), "");
             }
+
+            int status = 0;
+            Handler handler = new Handler();
+
+            String msg = "Atharva";
+
+            public void showDialog(Activity activity, String msg) {
+                final Dialog dialog = new Dialog(activity);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setCancelable(false);
+                dialog.setContentView(R.layout.upload);
+
+                final ProgressBar text = (ProgressBar) dialog.findViewById(R.id.progress_horizontal);
+                final TextView text2 = dialog.findViewById(R.id.value123);
+
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        while (status < 100) {
+
+                            status += 1;
+
+                            try {
+                                Thread.sleep(200);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+
+                                    text.setProgress(status);
+                                    text2.setText(String.valueOf(status));
+
+                                    if (status == 100) {
+                                        dialog.dismiss();
+                                    }
+                                }
+                            });
+                        }
+                    }
+                }).start();
+
+
+                dialog.show();
+
+                Window window = dialog.getWindow();
+                window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+            }
         });
+
     }
 
     //create notification channel if you target android 8.0 or higher version
@@ -431,9 +479,7 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
         if(requestCode==9 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-        {
             selectfile();
-        }
         else
             Toast.makeText(this, "Please provide permission", Toast.LENGTH_SHORT).show();
     }
@@ -442,7 +488,8 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth)
     {
         due_d = dayOfMonth +"/"+ month + "/" + year;
-        duedate.setText(due_d);
+
+        duedate_txt.setText(due_d);
     }
 
 
