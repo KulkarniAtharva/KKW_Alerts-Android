@@ -1631,6 +1631,7 @@ id drawerlayout
 id dropdown_menu
 id due_date_btn
 id due_date_txt
+id dued
 id edit_query
 id end
 id enterAlways
@@ -1656,6 +1657,7 @@ id framge_container
 id ghost_view
 id ghost_view_holder
 id given_date
+id givend
 id gone
 id graduallyTextView
 id grid
@@ -1756,6 +1758,7 @@ id progress_percent
 id radio
 id rate
 id recyclerView
+id removebtn
 id report
 id restart
 id reverse
@@ -1820,6 +1823,7 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id teachername
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id text
@@ -1952,6 +1956,7 @@ layout download
 layout item
 layout item2
 layout item3
+layout item4
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title

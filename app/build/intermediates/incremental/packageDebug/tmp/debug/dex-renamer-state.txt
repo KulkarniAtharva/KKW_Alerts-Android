@@ -1,7 +1,7 @@
-#Tue Mar 24 21:02:13 IST 2020
-base.0=C\:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+#Wed Mar 25 02:10:20 IST 2020
+base.0=C\:\\Users\\adwai\\AndroidStudioProjects\\KKW_Alerts\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.1=C\:\\Users\\adwai\\AndroidStudioProjects\\KKW_Alerts\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex

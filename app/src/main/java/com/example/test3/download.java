@@ -33,8 +33,9 @@ public class download extends AppCompatActivity
 {
     String fileName;
     RecyclerView recyclerView;
+    LinearLayoutManager linearLayoutManager;
     String url;
-    String title;
+    String title,t_name,due_date,given_date;
     int field_count;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -75,7 +76,7 @@ public class download extends AppCompatActivity
                     }
                     field_count++;
                 }*/
-               for(DataSnapshot childsnapshot : dataSnapshot.getChildren())
+              /*for(DataSnapshot childsnapshot : dataSnapshot.getChildren())
                {
                     url = childsnapshot.getValue(String.class);
                    break;
@@ -84,8 +85,36 @@ public class download extends AppCompatActivity
                 {
                     title = childsnapshot.getValue(String.class);
                 }
-                //Toast.makeText(download.this, title, Toast.LENGTH_SHORT).show();
-                ((DownloadViewCreator)recyclerView.getAdapter()).update(title,url);
+                //Toast.makeText(download.this, title, Toast.LENGTH_SHORT).show();*/
+
+
+                for(DataSnapshot childsnapshot:dataSnapshot.getChildren())
+                {
+                    t_name = childsnapshot.getRef().getParent().getKey();
+                    //Toast.makeText(download.this, t_name, Toast.LENGTH_SHORT).show();
+                    String assignmentid = childsnapshot.getKey();
+                    //Toast.makeText(download.this, key, Toast.LENGTH_SHORT).show();
+
+                    for(DataSnapshot childsnapshot2 : childsnapshot.getChildren())
+                    {
+                        String key = childsnapshot2.getKey();
+                        //Toast.makeText(download.this, key, Toast.LENGTH_SHORT).show();
+                        if (key.contentEquals("Title")) {
+                            title = childsnapshot2.getValue(String.class);
+                        }
+                        if (key.contentEquals("Assignment Url")) {
+                            url = childsnapshot2.getValue(String.class);
+                        }
+                        if (key.contentEquals("Due Date")) {
+                            due_date = childsnapshot2.getValue(String.class);
+                        }
+                        if (key.contentEquals("Given Date")) {
+                            given_date = childsnapshot2.getValue(String.class);
+                        }
+                    }
+                    ((DownloadViewCreator)recyclerView.getAdapter()).update(title,url,due_date,given_date,t_name);
+                }
+
             }
 
             @Override
@@ -116,8 +145,12 @@ public class download extends AppCompatActivity
         recyclerView = findViewById(R.id.recyclerView);
         // custom adapters always
         // populate the recycler view with items
-        recyclerView.setLayoutManager(new LinearLayoutManager(download.this));
-        DownloadViewCreator myAdapter = new DownloadViewCreator(recyclerView,download.this,new ArrayList<String>(),new ArrayList<String>());
+        linearLayoutManager = new LinearLayoutManager(download.this);
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
+       // recyclerView.setLayoutManager(new LinearLayoutManager(download.this));
+        DownloadViewCreator myAdapter = new DownloadViewCreator(recyclerView,download.this,new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>());
         recyclerView.setAdapter(myAdapter);
 
         ActionBar actionBar = getSupportActionBar();

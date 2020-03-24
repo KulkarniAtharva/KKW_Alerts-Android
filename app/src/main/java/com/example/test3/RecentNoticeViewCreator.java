@@ -125,6 +125,7 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
                                                         if(noticetext.contentEquals(notice) && notice_id.contentEquals(noticeid))
                                                         {
                                                             childSnapshot.getRef().getParent().removeValue();
+                                                            //Toast.makeText(context, childSnapshot.getRef().getParent().getKey(), Toast.LENGTH_SHORT).show();
                                                             senders.remove(position);
                                                             dates.remove(position);
                                                             notices.remove(position);

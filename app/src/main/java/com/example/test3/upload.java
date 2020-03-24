@@ -74,13 +74,14 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
     TextView notification;
     FirebaseAuth mAuth;
     FirebaseUser user;
-    String filename;
+    String filename,filenamefordb;
     TextInputEditText textInputEditText;
     TextView progresspercent,givendate,duedate_txt;
     ImageButton duedate_btn;
-     String title,url,given_d,due_d;
-     int progress = 0;
-     Handler handler;
+    String title,url,given_d,due_d;
+
+    int progress = 0;
+    Handler handler;
     CatLoadingView mView;
 
     private final String CHANNEL_ID = "simple_notification";
@@ -181,7 +182,7 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
         switch(v.getId())
         {
             case R.id.choose:
-                {
+            {
                 if (ContextCompat.checkSelfPermission(upload.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                     Toast.makeText(this, "Make Sure File is Selected from FILE MANAGER", Toast.LENGTH_LONG).show();
                     selectfile();
@@ -191,8 +192,8 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
                 break;
             }
             case R.id.upload:
-                {
-                    progress = 0;
+            {
+                progress = 0;
                 if (pdfuri != null)   //the user has selected a file
                 {
                     uploadfile(pdfuri);
@@ -203,12 +204,12 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
                 break;
             }
             case R.id.due_date_btn:
-                {
+            {
                 showDatePickerDialog();
                 break;
             }
         }
-        }
+    }
         /*switch (v.getId())
         {
             case R.id.choose: showfilechooser();  break;
@@ -249,10 +250,10 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
 
         if (path != null) {
             filename = path.substring(path.lastIndexOf('/'), path.lastIndexOf('.'));
-            //final String filename1 = System.currentTimeMillis()+"";
+            filenamefordb = System.currentTimeMillis()+"";
         }
 
-        final StorageReference storageReference = storage.getReference().child("Uploads").child(u_name).child(filename);   // returns root path of the database
+        final StorageReference storageReference = storage.getReference().child("Uploads").child(u_name).child(filenamefordb);   // returns root path of the database
         storageReference.putFile(pdfuri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -270,13 +271,18 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
 
                                 final DatabaseReference reference = database.getReference();      //return the path to the root
                                 //String url = taskSnapshot.getStorage().child("Uploads").child(u_name).child(filename).getDownloadUrl().toString();
-                                reference.child("Uploads").child(filename).child("Assignment Url").setValue(url).addOnCompleteListener(new OnCompleteListener<Void>() {
+
+
+                                reference.child("Uploads").child(u_name).child(filenamefordb).child("Assignment Url").setValue(url).addOnCompleteListener(new OnCompleteListener<Void>()
+                                {
                                     @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful()) {
-                                            reference.child("Uploads").child(filename).child("Title").setValue(title);
-                                            reference.child("Uploads").child(filename).child("Given Date").setValue(given_d);
-                                            reference.child("Uploads").child(filename).child("Due Date").setValue(due_d);
+                                    public void onComplete(@NonNull Task<Void> task)
+                                    {
+                                        if(task.isSuccessful())
+                                        {
+                                            reference.child("Uploads").child(u_name).child(filenamefordb).child("Title").setValue(title);
+                                            reference.child("Uploads").child(u_name).child(filenamefordb).child("Given Date").setValue(given_d);
+                                            reference.child("Uploads").child(u_name).child(filenamefordb).child("Due Date").setValue(due_d);
 
 
                                             //Toast.makeText(upload.this, "File Successfully Uploaded", Toast.LENGTH_LONG).show();
@@ -437,18 +443,18 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
     //create notification channel if you target android 8.0 or higher version
     private void createNotificationChannel()
     {
-         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O)
-         {
-             CharSequence name = "Simple Notification";
-             String description = "Include all the simple notification";
-             int importance = NotificationManager.IMPORTANCE_DEFAULT;
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O)
+        {
+            CharSequence name = "Simple Notification";
+            String description = "Include all the simple notification";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
 
-             NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID,name,importance);
-             notificationChannel.setDescription(description);
+            NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID,name,importance);
+            notificationChannel.setDescription(description);
 
-             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-             notificationManager.createNotificationChannel(notificationChannel);
-         }
+            NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            notificationManager.createNotificationChannel(notificationChannel);
+        }
     }
 
     private void selectfile()
