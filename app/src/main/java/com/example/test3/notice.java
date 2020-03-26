@@ -104,7 +104,6 @@ public class notice extends AppCompatActivity implements View.OnClickListener
         actionBar.setDisplayHomeAsUpEnabled(true);      // For back button to be displayed on toolbar
     }
 
-
     // For back button on toolbar
     @Override
     public boolean onSupportNavigateUp()
