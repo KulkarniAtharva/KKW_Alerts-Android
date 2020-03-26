@@ -3,6 +3,7 @@ package com.example.test3;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,7 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class show_notice extends AppCompatActivity {
+public class show_notice extends AppCompatActivity
+{
     String notice, date, sender;
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
@@ -30,6 +32,9 @@ public class show_notice extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_notice);
+
+        findViewById(R.id.progress).setVisibility(View.VISIBLE);
+        findViewById(R.id.loading).setVisibility(View.VISIBLE);
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Notices");//reference inside Uploads
 
@@ -64,7 +69,8 @@ public class show_notice extends AppCompatActivity {
                     ((NoticeViewCreator)recyclerView.getAdapter()).update(date,sender,notice);
                 }
 
-
+                findViewById(R.id.progress).setVisibility(View.GONE);
+                findViewById(R.id.loading).setVisibility(View.GONE);
             }
 
             @Override
@@ -115,5 +121,18 @@ public class show_notice extends AppCompatActivity {
 
         // Set BackgroundDrawable
         actionBar.setBackgroundDrawable(colorDrawable);
+
+        actionBar.setTitle("Notices");
+
+        getWindow().setStatusBarColor(getResources().getColor(R.color.green, this.getTheme()));
+        actionBar.setDisplayHomeAsUpEnabled(true);      // For back button to be displayed on toolbar
+    }
+
+    // For back button on toolbar
+    @Override
+    public boolean onSupportNavigateUp()
+    {
+        onBackPressed();
+        return true;
     }
 }

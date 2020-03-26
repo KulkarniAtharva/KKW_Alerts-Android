@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-47:12
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-48:12
 MERGED from [com.airbnb.android:lottie:2.7.0] C:\Users\athar\.gradle\caches\transforms-2\files-2.1\f6b57cd83121e87387ca53bdd1a28f5a\jetified-lottie-2.7.0\AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\athar\.gradle\caches\transforms-2\files-2.1\09884e4f09dcb45cba6db7aeffefa6be\material-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.roger.catloadinglibrary:catloadinglibrary:1.0.4] C:\Users\athar\.gradle\caches\transforms-2\files-2.1\df7f245823340526b7085074680f92a0\jetified-catloadinglibrary-1.0.4\AndroidManifest.xml:2:1-17:12
@@ -78,20 +78,20 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\athar\.gradle\caches\transform
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\athar\.gradle\caches\transforms-2\files-2.1\d619de1e9e20a12a3fda730585e012a7\jetified-firebase-database-collection-17.0.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.datatransport:transport-api:2.2.0] C:\Users\athar\.gradle\caches\transforms-2\files-2.1\ef571482370f29a8294f7595b10ea4c8\jetified-transport-api-2.2.0\AndroidManifest.xml:15:1-22:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] C:\Users\athar\.gradle\caches\transforms-2\files-2.1\dd82e3ec00e2288b1c8e6b2e2ec679e8\jetified-play-services-measurement-base-16.0.3\AndroidManifest.xml:2:1-9:12
-INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-47:12
+INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-48:12
 	package
 		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:5:5-32
 		INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-47:12
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-48:12
 		INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-47:12
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:2:1-48:12
 		INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:3:5-63
@@ -154,7 +154,7 @@ ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest
 	android:name
 		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:10:22-73
 application
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:12:5-44:19
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:12:5-45:19
 MERGED from [com.airbnb.android:lottie:2.7.0] C:\Users\athar\.gradle\caches\transforms-2\files-2.1\f6b57cd83121e87387ca53bdd1a28f5a\jetified-lottie-2.7.0\AndroidManifest.xml:11:5-20
 MERGED from [com.airbnb.android:lottie:2.7.0] C:\Users\athar\.gradle\caches\transforms-2\files-2.1\f6b57cd83121e87387ca53bdd1a28f5a\jetified-lottie-2.7.0\AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\athar\.gradle\caches\transforms-2\files-2.1\09884e4f09dcb45cba6db7aeffefa6be\material-1.1.0\AndroidManifest.xml:22:5-20
@@ -236,79 +236,81 @@ MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] C:\Us
 	android:theme
 		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:18:9-40
 activity#com.example.test3.MainActivity
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:19:9-25:20
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:19:9-26:20
+	android:theme
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:20:13-69
 	android:name
 		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:19:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:20:13-24:29
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:21:13-25:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:21:17-69
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:22:17-69
 	android:name
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:21:25-66
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:22:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:23:17-77
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:24:17-77
 	android:name
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:23:27-74
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:24:27-74
 activity#com.example.test3.teacher_activity
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:26:9-27:71
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:27:9-28:71
 	android:theme
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:27:13-69
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:28:13-69
 	android:name
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:26:19-51
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:27:19-51
 activity#com.example.test3.student_activity
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:28:9-29:71
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:29:9-30:71
 	android:theme
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:29:13-69
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:30:13-69
 	android:name
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:28:19-51
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:29:19-51
 activity#com.example.test3.upload
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:30:9-43
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:31:9-43
 	android:name
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:30:19-41
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:31:19-41
 activity#com.example.test3.download
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:31:9-45
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:32:9-45
 	android:name
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:31:19-43
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:32:19-43
 activity#com.example.test3.about
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:32:9-42
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:33:9-42
 	android:name
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:32:19-40
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:33:19-40
 activity#com.example.test3.report
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:33:9-43
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:34:9-43
 	android:name
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:33:19-41
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:34:19-41
 activity#com.example.test3.rate
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:34:9-41
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:35:9-41
 	android:name
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:34:19-39
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:35:19-39
 activity#com.example.test3.notice
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:35:9-43
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:36:9-43
 	android:name
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:35:19-41
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:36:19-41
 activity#com.example.test3.show_notice
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:36:9-48
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:37:9-48
 	android:name
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:36:19-46
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:37:19-46
 activity#com.example.test3.student_erp_login
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:37:9-54
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:38:9-54
 	android:name
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:37:19-52
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:38:19-52
 activity#com.example.test3.student_attendance
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:38:9-55
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:39:9-55
 	android:name
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:38:19-53
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:39:19-53
 activity#com.example.test3.stud_attendance
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:39:9-52
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:40:9-52
 	android:name
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:39:19-50
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:40:19-50
 activity#com.example.test3.recent_notice
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:40:9-50
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:41:9-50
 	android:name
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:40:19-48
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:41:19-48
 activity#com.example.test3.recent_assignment
-ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:41:9-54
+ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:42:9-54
 	android:name
-		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:41:19-52
+		ADDED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml:42:19-52
 uses-sdk
 INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\athar\StudioProjects\KKW_Alerts\app\src\main\AndroidManifest.xml

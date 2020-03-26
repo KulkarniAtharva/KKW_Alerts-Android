@@ -1,16 +1,20 @@
 package com.example.test3;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -94,15 +98,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
     @Override
     public void onClick(View v)
     {
-        switch (v.getId())
-        {
-            case R.id.sign_in_button:   signIn();
-        }
+         signIn();
     }
 
     private void signIn()
@@ -180,9 +183,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String after_at = Userid.substring(at_pos,Userid.length());
 
             if(after_at.contentEquals("kkwagh.edu.in") || Userid .contentEquals("adwaitgondhalekar@gmail.com"))
-              teacher_flag=1;
+                teacher_flag=1;
             else
-                  teacher_flag=0;
+                teacher_flag=0;
 
           /* if(finduser!=null)
            {
@@ -210,7 +213,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                    }
                });*/
-
 
                if(teacher_flag==1)
                {
@@ -375,12 +377,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String after_at = new_userid.substring(at_pos,new_userid.length());
 
         if(after_at.contentEquals("kkwagh.edu.in") || new_userid.contentEquals("adwaitgondhalekar@gmail.com"))
-        {
             writeNewTeacher(new_username,new_userid,uid);
-        }
         else
-        {
             writeNewStudent(new_username,new_userid,uid);
-        }
     }
 }

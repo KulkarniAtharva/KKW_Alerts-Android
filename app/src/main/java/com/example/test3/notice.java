@@ -61,7 +61,7 @@ public class notice extends AppCompatActivity implements View.OnClickListener
     String notice;
     TextInputEditText textInputEditText;
     String date;
-   // FirebaseUser user;
+    // FirebaseUser user;
     String user_email;
     FirebaseAuth auth;
     private String Url = "https://fcm.googleapis.com/fcm/send" ;
@@ -223,12 +223,12 @@ public class notice extends AppCompatActivity implements View.OnClickListener
         // Set the Negative button with No name OnClickListener method is use of DialogInterface interface.
         builder.setNegativeButton("No",new DialogInterface.OnClickListener()
         {
-                @Override
-                public void onClick(DialogInterface dialog, int which)
-                {
-                        // If user click no then dialog box is canceled.
-                        dialog.cancel();
-                }
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                // If user click no then dialog box is canceled.
+                dialog.cancel();
+            }
         });
 
         // Create the Alert dialog

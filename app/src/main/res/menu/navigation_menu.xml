@@ -8,12 +8,12 @@
 
         <item
             android:id="@+id/report"
-            android:title="Report"
+            android:title="Report bugs"
             android:icon="@drawable/report" />
 
         <item
             android:id="@+id/rate"
-            android:title="Rate"
+            android:title="Rate Us"
             android:icon="@drawable/rate"
             />
     </group>

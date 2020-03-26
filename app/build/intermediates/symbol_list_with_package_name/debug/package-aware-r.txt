@@ -1379,6 +1379,8 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable about
 drawable assignment
+drawable assignment6
+drawable attendance
 drawable avd_hide_password
 drawable avd_show_password
 drawable background
@@ -1482,7 +1484,6 @@ drawable rate
 drawable recent
 drawable recent_reminder
 drawable reminder
-drawable reminder1
 drawable report
 drawable school
 drawable send
@@ -1631,6 +1632,7 @@ id drawerlayout
 id dropdown_menu
 id due_date_btn
 id due_date_txt
+id dued
 id edit_query
 id end
 id enterAlways
@@ -1656,6 +1658,7 @@ id framge_container
 id ghost_view
 id ghost_view_holder
 id given_date
+id givend
 id gone
 id graduallyTextView
 id grid
@@ -1688,6 +1691,7 @@ id line1
 id line3
 id listMode
 id list_item
+id loading
 id logout
 id lottie_layer_name
 id lottie_view
@@ -1749,6 +1753,7 @@ id password_toggle
 id peekHeight
 id percent
 id pin
+id progress
 id progressBar
 id progress_circular
 id progress_horizontal
@@ -1756,6 +1761,7 @@ id progress_percent
 id radio
 id rate
 id recyclerView
+id removebtn
 id report
 id restart
 id reverse
@@ -1820,6 +1826,7 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id teachername
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id text
@@ -1930,6 +1937,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout about
 layout activity_main
+layout assignment_item
 layout catloading_main
 layout custom_dialog
 layout custom_toast
@@ -1949,9 +1957,6 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout download
-layout item
-layout item2
-layout item3
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -1982,6 +1987,7 @@ layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
 layout navigation_header
 layout notice
+layout notice_item
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -1990,7 +1996,9 @@ layout notification_template_part_chronometer
 layout notification_template_part_time
 layout rate
 layout recent_assignment
+layout recent_assignment_item
 layout recent_notice
+layout recent_notice_item
 layout report
 layout select_dialog_item_material
 layout select_dialog_multichoice_material

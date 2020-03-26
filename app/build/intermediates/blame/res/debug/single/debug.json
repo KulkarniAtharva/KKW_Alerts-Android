@@ -44,6 +44,14 @@
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_attendance.jpg.flat",
+        "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\drawable-v24\\attendance.jpg"
+    },
+    {
+        "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\layout_assignment_item.xml.flat",
+        "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\layout\\assignment_item.xml"
+    },
+    {
         "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\drawable_recent_reminder.jpg.flat",
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\drawable\\recent_reminder.jpg"
     },
@@ -56,10 +64,6 @@
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\drawable-v24\\copybook.png"
     },
     {
-        "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\layout_item.xml.flat",
-        "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\layout\\item.xml"
-    },
-    {
         "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\drawable_send.xml.flat",
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\drawable\\send.xml"
     },
@@ -70,10 +74,6 @@
     {
         "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\drawable_kkw_logo.png.flat",
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\drawable\\kkw_logo.png"
-    },
-    {
-        "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\drawable_reminder1.jpg.flat",
-        "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\drawable\\reminder1.jpg"
     },
     {
         "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_calendar.jpg.flat",
@@ -152,20 +152,12 @@
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\layout_item3.xml.flat",
-        "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\layout\\item3.xml"
-    },
-    {
         "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\layout_student_attendance.xml.flat",
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\layout\\student_attendance.xml"
-    },
-    {
-        "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\drawable_reminder.jpg.flat",
-        "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\drawable\\reminder.jpg"
     },
     {
         "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\layout_student_erp_login.xml.flat",
@@ -204,12 +196,20 @@
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\drawable\\ic_person_outline_black_24dp.xml"
     },
     {
+        "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\layout_recent_notice_item.xml.flat",
+        "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\layout\\recent_notice_item.xml"
+    },
+    {
         "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\layout_teacher_activity.xml.flat",
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\layout\\teacher_activity.xml"
     },
     {
         "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\layout_recent_assignment_item.xml.flat",
+        "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\layout\\recent_assignment_item.xml"
     },
     {
         "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -220,16 +220,16 @@
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\layout\\download.xml"
     },
     {
-        "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\layout_item2.xml.flat",
-        "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\layout\\item2.xml"
-    },
-    {
         "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\drawable_custom_progressbar.xml.flat",
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\drawable\\custom_progressbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_reminder.jpg.flat",
+        "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\drawable-v24\\reminder.jpg"
     },
     {
         "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_book.png.flat",
@@ -278,6 +278,10 @@
     {
         "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\layout_notice_item.xml.flat",
+        "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\layout\\notice_item.xml"
     },
     {
         "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\drawable_assignment.jpg.flat",
@@ -334,5 +338,9 @@
     {
         "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_browser.png.flat",
         "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\drawable-v24\\browser.png"
+    },
+    {
+        "merged": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_assignment6.jpg.flat",
+        "source": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\src\\main\\res\\drawable-v24\\assignment6.jpg"
     }
 ]

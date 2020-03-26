@@ -44,7 +44,7 @@ public class NoticeViewCreator extends RecyclerView.Adapter<NoticeViewCreator.Vi
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)   // to create view for recycler view item
     {
-        View view = LayoutInflater.from(context).inflate(R.layout.item2,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.notice_item,parent,false);
         return new ViewHolder(view);
 
 

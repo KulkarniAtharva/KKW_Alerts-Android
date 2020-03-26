@@ -43,7 +43,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="30dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
@@ -58,6 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="100dp"
             android:layout_weight="1"
             android:textAlignment="center" />
 
@@ -82,7 +83,8 @@
         <TextView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:id="@+id/due_date_txt" />
+            android:id="@+id/due_date_txt"
+            android:text="No date chosen"/>
         <ImageButton
             android:id="@+id/due_date_btn"
             android:layout_width="40dp"

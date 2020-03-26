@@ -86,7 +86,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="155dp"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@drawable/assignment" />
+                                android:src="@drawable/assignment6" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="ASSIGNMENT"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold|italic" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -113,16 +122,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="155dp"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@drawable/reminder1" />
+                                android:src="@drawable/reminder" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
-                                android:text=""
+                                android:text="NOTICE"
                                 android:textColor="@android:color/black"
                                 android:textSize="18sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold|italic" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -183,7 +192,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="155dp"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@drawable/recent_reminder" />
+                                android:src="@drawable/attendance" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -192,7 +201,7 @@
                                 android:text="ATTENDANCE"
                                 android:textColor="@android:color/black"
                                 android:textSize="18sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold|italic" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>

@@ -5,6 +5,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -33,8 +34,9 @@ public class download extends AppCompatActivity
 {
     String fileName;
     RecyclerView recyclerView;
+    LinearLayoutManager linearLayoutManager;
     String url;
-    String title;
+    String title,t_name,due_date,given_date;
     int field_count;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -44,6 +46,9 @@ public class download extends AppCompatActivity
         setContentView(R.layout.download);
 
         recyclerView = findViewById(R.id.recyclerView);
+
+        findViewById(R.id.progress).setVisibility(View.VISIBLE);
+        findViewById(R.id.loading).setVisibility(View.VISIBLE);
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Uploads");//reference inside Uploads
 
@@ -75,7 +80,7 @@ public class download extends AppCompatActivity
                     }
                     field_count++;
                 }*/
-               for(DataSnapshot childsnapshot : dataSnapshot.getChildren())
+              /*for(DataSnapshot childsnapshot : dataSnapshot.getChildren())
                {
                     url = childsnapshot.getValue(String.class);
                    break;
@@ -84,8 +89,38 @@ public class download extends AppCompatActivity
                 {
                     title = childsnapshot.getValue(String.class);
                 }
-                //Toast.makeText(download.this, title, Toast.LENGTH_SHORT).show();
-                ((DownloadViewCreator)recyclerView.getAdapter()).update(title,url);
+                //Toast.makeText(download.this, title, Toast.LENGTH_SHORT).show();*/
+
+
+                for(DataSnapshot childsnapshot:dataSnapshot.getChildren())
+                {
+                    t_name = childsnapshot.getRef().getParent().getKey();
+                    //Toast.makeText(download.this, t_name, Toast.LENGTH_SHORT).show();
+                    String assignmentid = childsnapshot.getKey();
+                    //Toast.makeText(download.this, key, Toast.LENGTH_SHORT).show();
+
+                    for(DataSnapshot childsnapshot2 : childsnapshot.getChildren())
+                    {
+                        String key = childsnapshot2.getKey();
+                        //Toast.makeText(download.this, key, Toast.LENGTH_SHORT).show();
+                        if (key.contentEquals("Title")) {
+                            title = childsnapshot2.getValue(String.class);
+                        }
+                        if (key.contentEquals("Assignment Url")) {
+                            url = childsnapshot2.getValue(String.class);
+                        }
+                        if (key.contentEquals("Due Date")) {
+                            due_date = childsnapshot2.getValue(String.class);
+                        }
+                        if (key.contentEquals("Given Date")) {
+                            given_date = childsnapshot2.getValue(String.class);
+                        }
+                    }
+                    ((DownloadViewCreator)recyclerView.getAdapter()).update(title,url,due_date,given_date,t_name);
+                }
+
+                findViewById(R.id.progress).setVisibility(View.GONE);
+                findViewById(R.id.loading).setVisibility(View.GONE);
             }
 
             @Override
@@ -116,8 +151,12 @@ public class download extends AppCompatActivity
         recyclerView = findViewById(R.id.recyclerView);
         // custom adapters always
         // populate the recycler view with items
-        recyclerView.setLayoutManager(new LinearLayoutManager(download.this));
-        DownloadViewCreator myAdapter = new DownloadViewCreator(recyclerView,download.this,new ArrayList<String>(),new ArrayList<String>());
+        linearLayoutManager = new LinearLayoutManager(download.this);
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        // recyclerView.setLayoutManager(new LinearLayoutManager(download.this));
+        DownloadViewCreator myAdapter = new DownloadViewCreator(recyclerView,download.this,new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>());
         recyclerView.setAdapter(myAdapter);
 
         ActionBar actionBar = getSupportActionBar();
@@ -127,5 +166,17 @@ public class download extends AppCompatActivity
 
         // Set BackgroundDrawable
         actionBar.setBackgroundDrawable(colorDrawable);
+        actionBar.setTitle("Assignments");
+
+        getWindow().setStatusBarColor(getResources().getColor(R.color.green, this.getTheme()));
+        actionBar.setDisplayHomeAsUpEnabled(true);      // For back button to be displayed on toolbar
+    }
+
+    // For back button on toolbar
+    @Override
+    public boolean onSupportNavigateUp()
+    {
+        onBackPressed();
+        return true;
     }
 }

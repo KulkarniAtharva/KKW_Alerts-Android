@@ -26,6 +26,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.roger.catloadinglibrary.CatLoadingView;
 
 public class student_activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
@@ -39,6 +40,7 @@ public class student_activity extends AppCompatActivity implements NavigationVie
     Toolbar toolbar;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+    CatLoadingView mView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)

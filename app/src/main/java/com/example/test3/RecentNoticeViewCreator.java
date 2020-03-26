@@ -44,11 +44,10 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
         notifyDataSetChanged();  // refreshes the recycler view automatically
     }
 
-    public RecentNoticeViewCreator(RecyclerView recyclerView, Context context, ArrayList<String> senders, ArrayList<String> dates, ArrayList<String> notices, ArrayList<String> noticeids)
+    public RecentNoticeViewCreator(RecyclerView recyclerView, Context context, ArrayList<String> dates, ArrayList<String> notices, ArrayList<String> noticeids)
     {
         this.recyclerView = recyclerView;
         this.context = context;
-        this.senders = senders;
         this.dates = dates;
         this.notices = notices;
         this.noticesids= noticeids;
@@ -58,7 +57,7 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)   // to create view for recycler view item
     {
-        View view = LayoutInflater.from(context).inflate(R.layout.item3,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.recent_notice_item,parent,false);
         return new ViewHolder(view);
     }
 
@@ -67,7 +66,6 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
     {
         // initialize the elements of indiv,items
         holder.Date.setText(senders.get(position));
-        holder.Sender.setText(dates.get(position));
         holder.Content.setText(notices.get(position));
         //holder.Noticeid.setText(noticesids.get(position));
 
@@ -101,7 +99,6 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
                                     {
                                         // When the user click yes button
                                         final String notice = notices.get(position);
-                                        final String sender = senders.get(position);
                                         final String date = dates.get(position);
                                         final String notice_id = noticesids.get(position);
 
@@ -116,7 +113,6 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
 
                                                 for(DataSnapshot childSnapshot : dataSnapshot.getChildren())
                                                 {
-
                                                     String key = childSnapshot.getKey();
                                                     String noticeid = childSnapshot.getRef().getParent().getKey();
                                                     if(key.contentEquals("Text"))
@@ -125,17 +121,14 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
                                                         if(noticetext.contentEquals(notice) && notice_id.contentEquals(noticeid))
                                                         {
                                                             childSnapshot.getRef().getParent().removeValue();
-                                                            senders.remove(position);
                                                             dates.remove(position);
                                                             notices.remove(position);
                                                             noticesids.remove(position);
                                                             notifyItemRemoved(position);
                                                             notifyDataSetChanged();
-
                                                         }
                                                     }
                                                 }
-
                                             }
 
                                             @Override
@@ -201,7 +194,6 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
     public class ViewHolder extends RecyclerView.ViewHolder
     {
         TextView Date;
-        TextView Sender;
         TextView Content;
         //TextView Noticeid;
         ImageButton imageButton;
@@ -210,7 +202,6 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
         {
             super(itemView);
             Date = itemView.findViewById(R.id.Date);
-            Sender = itemView.findViewById(R.id.Sender);
             Content = itemView.findViewById(R.id.Content);
             //Noticeid = itemView.findViewById(R.id.notice_id);
             imageButton = itemView.findViewById(R.id.deletebtn);

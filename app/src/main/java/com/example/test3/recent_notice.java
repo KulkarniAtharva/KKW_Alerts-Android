@@ -97,7 +97,7 @@ public class recent_notice extends AppCompatActivity
         linearLayoutManager.setReverseLayout(true);
         linearLayoutManager.setStackFromEnd(true);*/
 
-        RecentNoticeViewCreator myAdapter = new RecentNoticeViewCreator(recyclerView, recent_notice.this, new ArrayList<String>(), new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>());
+        RecentNoticeViewCreator myAdapter = new RecentNoticeViewCreator(recyclerView, recent_notice.this, new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>());
         recyclerView.setAdapter(myAdapter);
 
         ActionBar actionBar = getSupportActionBar();
