@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xlarge-v4\\values-xlarge-v4.xml",
+            "outputFile": "C:\\Users\\adwai\\AndroidStudioProjects\\KKW_Alerts\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xlarge-v4\\values-xlarge-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\athar\\.gradle\\caches\\transforms-2\\files-2.1\\72755d8593c3ca1ed00b11907b10c688\\appcompat-1.1.0\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
+                    "source": "C:\\Users\\adwai\\.gradle\\caches\\transforms-2\\files-2.1\\72755d8593c3ca1ed00b11907b10c688\\appcompat-1.1.0\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",
