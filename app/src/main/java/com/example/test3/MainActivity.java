@@ -146,7 +146,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v)
     {
-         isNetworkConnectionAvailable();
+         boolean status = isNetworkConnectionAvailable();
+         if(status==true)
          signIn();
     }
 
