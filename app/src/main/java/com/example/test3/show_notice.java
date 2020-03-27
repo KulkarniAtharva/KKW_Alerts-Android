@@ -50,6 +50,7 @@ public class show_notice extends AppCompatActivity
                 for (DataSnapshot childsnapshot : dataSnapshot.getChildren())
                 {
                     String notice_id = childsnapshot.getKey();
+                    sender = childsnapshot.getRef().getParent().getKey();
                     //Toast.makeText(show_notice.this, k, Toast.LENGTH_LONG).show();
                     DatabaseReference inside_notice = FirebaseDatabase.getInstance().getReference().child("Noties").child(notice_id);
 
@@ -59,9 +60,9 @@ public class show_notice extends AppCompatActivity
                         if (k.contentEquals("Date")) {
                             date = childsnapshot2.getValue(String.class);
                         }
-                        if (k.contentEquals("Name")) {
+                        /*if (k.contentEquals("Name")) {
                             sender = childsnapshot2.getValue(String.class);
-                        }
+                        }*/
                         if (k.contentEquals("Text")) {
                             notice = childsnapshot2.getValue(String.class);
                         }

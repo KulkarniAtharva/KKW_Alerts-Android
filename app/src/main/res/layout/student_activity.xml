@@ -157,7 +157,8 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="155dp"
-                                android:layout_gravity="center_horizontal" />
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/timetable"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -165,7 +166,8 @@
                                 android:layout_marginLeft="20dp"
                                 android:textColor="@android:color/black"
                                 android:textSize="18sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold|italic"
+                                android:text="TIMETABLE"/>
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>

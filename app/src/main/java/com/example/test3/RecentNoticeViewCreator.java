@@ -27,7 +27,6 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
     RecyclerView recyclerView;
 
     Context context;
-    ArrayList<String> senders = new ArrayList<>();
     ArrayList<String> dates = new ArrayList<>();
     ArrayList<String> notices = new ArrayList<>();
 
@@ -35,9 +34,8 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
     ArrayList<String>noticesids = new ArrayList<>();
     String teachername;
 
-    public void update(String name,String date,String text,String noticeid)
+    public void update(String date,String text,String noticeid)
     {
-        senders.add(name);
         dates.add(date);
         notices.add(text);
         noticesids.add(noticeid);//new change
@@ -65,7 +63,7 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position)
     {
         // initialize the elements of indiv,items
-        holder.Date.setText(senders.get(position));
+        holder.Date.setText(dates.get(position));
         holder.Content.setText(notices.get(position));
         //holder.Noticeid.setText(noticesids.get(position));
 
@@ -188,7 +186,7 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
     @Override
     public int getItemCount()       // return the no. of items
     {
-        return senders.size();
+        return  dates.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder

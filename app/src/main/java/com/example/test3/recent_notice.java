@@ -50,19 +50,20 @@ public class recent_notice extends AppCompatActivity
                 {
                     String k = childsnapshot.getKey();
                     noticeid = childsnapshot.getRef().getParent().getKey();
+
                     //Toast.makeText(recent_notice.this, noticeid, Toast.LENGTH_SHORT).show();
                     if (k.contentEquals("Date")) {
                         date = childsnapshot.getValue(String.class);
                     }
-                    if (k.contentEquals("Name")) {
+                    /*if (k.contentEquals("Name")) {
                         sender = childsnapshot.getValue(String.class);
-                    }
+                    }*/
                     if (k.contentEquals("Text")) {
                         notice = childsnapshot.getValue(String.class);
                     }
                 }
 
-                ((RecentNoticeViewCreator)recyclerView.getAdapter()).update(date,sender,notice,noticeid);
+                ((RecentNoticeViewCreator)recyclerView.getAdapter()).update(date,notice,noticeid);
             }
 
             @Override

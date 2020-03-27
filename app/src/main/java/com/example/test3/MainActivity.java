@@ -1,8 +1,13 @@
 package com.example.test3;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,6 +44,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -59,6 +65,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //User user;
     private DatabaseReference mDatabase;
     static private DatabaseReference finduser;
+
+    public void checkNetworkConnection(){
+        AlertDialog.Builder builder =new AlertDialog.Builder(this);
+        builder.setTitle("No internet Connection");
+        builder.setMessage("Please turn on internet connection to continue");
+        builder.setNegativeButton("close", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    public boolean isNetworkConnectionAvailable(){
+        ConnectivityManager cm =
+                (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnected();
+        if(isConnected) {
+            Log.d("Network", "Connected");
+            return true;
+        }
+        else{
+            checkNetworkConnection();
+            Log.d("Network","Not Connected");
+            return false;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -91,6 +129,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     // Task completed successfully
                     InstanceIdResult authResult = task.getResult();
                     String fcmToken = authResult.getToken();
+
+
+
                 }
                 else {
                     // Task failed with an exception
@@ -105,6 +146,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v)
     {
+         isNetworkConnectionAvailable();
          signIn();
     }
 
@@ -216,6 +258,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                if(teacher_flag==1)
                {
+                   FirebaseMessaging.getInstance().subscribeToTopic("TEACHERS");
                    Intent intent = new Intent(MainActivity.this,teacher_activity.class);
                    MyObjects.getInstance().GetGoogleSignInclient(mGoogleSignInClient);
                   // MyObjects.getInstance().GetFireBaseUser(mAuth.getInstance().getCurrentUser());
@@ -224,6 +267,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                }
                else
                {
+                   FirebaseMessaging.getInstance().subscribeToTopic("STUDENTS");
                    Intent intent = new Intent(MainActivity.this,student_activity.class);
                    MyObjects.getInstance().GetGoogleSignInclient(mGoogleSignInClient);
                   // MyObjects.getInstance().GetFireBaseUser(mAuth.getInstance().getCurrentUser());
@@ -241,8 +285,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //Toast.makeText(this, "Signed Out", Toast.LENGTH_SHORT).show();
         }
     }
-    private void writeNewStudent(final String student_name,final String student_email,String uid)
+    private void writeNewStudent(final String student_name,final String student_email)
     {
+        FirebaseMessaging.getInstance().subscribeToTopic("STUDENTS");
        /* reff = FirebaseDatabase.getInstance().getReference();
         if(reff!=null)
         {
@@ -279,7 +324,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         User user = new User(student_name,student_email);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("users").child("students").child(student_name).child("Email").setValue(student_email);
-        mDatabase.child("users").child("students").child(student_name).child("Uid").setValue(uid);
+        //mDatabase.child("users").child("students").child(student_name).child("Uid").setValue(uid);
 
         Intent intent = new Intent(this, student_activity.class);
         MyObjects.getInstance().GetGoogleSignInclient(mGoogleSignInClient);
@@ -296,12 +341,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //demoref.push().setValue(student_email);
     }
-    private void writeNewTeacher(String teacher_name,String teacher_email,String uid)
+    private void writeNewTeacher(String teacher_name,String teacher_email)
     {
+        FirebaseMessaging.getInstance().subscribeToTopic("TEACHERS");
         User user= new User(teacher_name,teacher_email);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("users").child("teachers").child(teacher_name).child("Email").setValue(teacher_email);
-        mDatabase.child("users").child("teachers").child(teacher_name).child("Uid").setValue(uid);
+       // mDatabase.child("users").child("teachers").child(teacher_name).child("Uid").setValue(uid);
         Intent intent = new Intent(this,teacher_activity.class);
         MyObjects.getInstance().GetGoogleSignInclient(mGoogleSignInClient);
         //MyObjects.getInstance().GetFireBaseUser(mAuth.getInstance().getCurrentUser());
@@ -371,14 +417,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         String new_userid = user.getEmail();
         String new_username = user.getDisplayName();
-        String uid = user.getUid();
+        //String uid = user.getUid();
 
         int at_pos = new_userid.lastIndexOf('@');
         String after_at = new_userid.substring(at_pos,new_userid.length());
 
         if(after_at.contentEquals("kkwagh.edu.in") || new_userid.contentEquals("adwaitgondhalekar@gmail.com"))
-            writeNewTeacher(new_username,new_userid,uid);
+            writeNewTeacher(new_username,new_userid);
         else
-            writeNewStudent(new_username,new_userid,uid);
+            writeNewStudent(new_username,new_userid);
     }
 }

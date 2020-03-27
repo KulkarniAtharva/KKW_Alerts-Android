@@ -43,6 +43,13 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -60,9 +67,14 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.roger.catloadinglibrary.CatLoadingView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.net.URL;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class upload extends AppCompatActivity implements View.OnClickListener, DatePickerDialog.OnDateSetListener
 {
@@ -79,6 +91,10 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
     TextView progresspercent,givendate,duedate_txt;
     ImageButton duedate_btn;
     String title,url,given_d,due_d;
+    boolean duedateselected = false;
+    boolean titlegiven = false;
+    private RequestQueue requestQueue;
+    private String Url = "https://fcm.googleapis.com/fcm/send" ;
 
     int progress = 0;
     Handler handler;
@@ -116,6 +132,7 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
         duedate_btn.setOnClickListener(this);
 
         textInputEditText = (TextInputEditText)findViewById(R.id.title);
+        //textInputEditText.addTextChangedListener(watcher);
 
         getWindow().setStatusBarColor(getResources().getColor(R.color.green, this.getTheme()));
 
@@ -137,6 +154,44 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
 
         actionBar.setDisplayHomeAsUpEnabled(true);      // For back button to be displayed on toolbar
     }
+
+   /* private TextWatcher watcher = new TextWatcher() {
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            if(s==null)
+            {
+                titlegiven = false;
+            }
+            else
+                titlegiven = true;
+
+
+        }
+
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            if(s==null)
+            {
+                titlegiven = false;
+            }
+            else
+                titlegiven = true;
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            if(s==null)
+            {
+                titlegiven = false;
+            }
+            else
+                titlegiven = true;
+
+        }
+    };*/
 
     // For back button on toolbar
     @Override
@@ -182,25 +237,54 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
         switch(v.getId())
         {
             case R.id.choose:
-            {
-                if (ContextCompat.checkSelfPermission(upload.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this, "Make Sure File is Selected from FILE MANAGER", Toast.LENGTH_LONG).show();
-                    selectfile();
+                {
+                title = textInputEditText.getText().toString();
+                titlegiven = false;
+                if(!(title.isEmpty()))
+                    titlegiven = true;
+
+               if (duedateselected != false && titlegiven!=false)
+                {
+
+                    if (ContextCompat.checkSelfPermission(upload.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                        Toast.makeText(this, "Make Sure File is Selected from FILE MANAGER", Toast.LENGTH_LONG).show();
+                        selectfile();
+                    } else
+                        ActivityCompat.requestPermissions(upload.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 9);
                 }
-                else
-                    ActivityCompat.requestPermissions(upload.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 9);
-                break;
+                else if(duedateselected==false && titlegiven ==true)
+                    Toast.makeText(this, "First Select Due Date!!!", Toast.LENGTH_SHORT).show();
+                else if(titlegiven==false && duedateselected==true)
+                    Toast.makeText(this, "Please Give Title!!!", Toast.LENGTH_SHORT).show();
+                else if(titlegiven ==false && titlegiven ==false)
+                    Toast.makeText(this, "Please Give Title & Select Due Date!!!", Toast.LENGTH_SHORT).show();
+                    break;
             }
             case R.id.upload:
             {
-                progress = 0;
-                if (pdfuri != null)   //the user has selected a file
-                {
-                    uploadfile(pdfuri);
-                    title = textInputEditText.getText().toString();
+                title = textInputEditText.getText().toString();
+                titlegiven = false;
+                if(!(title.isEmpty()))
+                    titlegiven = true;
+
+                if(duedateselected!=false && titlegiven!=false) {
+                    progress = 0;
+                    if (pdfuri != null)   //the user has selected a file
+                    {
+                        uploadfile(pdfuri);
+                        title = textInputEditText.getText().toString();
+                        //if()
+                         //   titlegiven = true;
+
+                    } else
+                        Toast.makeText(this, "Select a file!!", Toast.LENGTH_SHORT).show();
                 }
-                else
-                    Toast.makeText(this, "Select a file!!", Toast.LENGTH_SHORT).show();
+                else if(duedateselected==false && titlegiven ==true)
+                    Toast.makeText(this, "First Select Due Date!!!", Toast.LENGTH_SHORT).show();
+                else if(titlegiven==false && duedateselected==true)
+                    Toast.makeText(this, "Please Give Title!!!", Toast.LENGTH_SHORT).show();
+                else if(titlegiven ==false && titlegiven ==false)
+                    Toast.makeText(this, "Please Give Title & Select Due Date!!!", Toast.LENGTH_SHORT).show();
                 break;
             }
             case R.id.due_date_btn:
@@ -231,9 +315,14 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
                 Calendar.getInstance().get(Calendar.MONTH),
                 Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
         );
+
+        // this sets today's date as minimum date and all the past dates are disabled.
+        datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+
         datePickerDialog.show();
     }
-    private void uploadfile(final Uri pdfuri) {
+    private void uploadfile(final Uri pdfuri)
+    {
         /*Progress Bar code
          progressBar = new ProgressBar(this);
         progressBar
@@ -246,7 +335,8 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
         //final String filename = pdfuri.getLastPathSegment().toString();
         String path = pdfuri.getPath();
 
-        if (path != null) {
+        if (path != null)
+        {
             filename = path.substring(path.lastIndexOf('/'), path.lastIndexOf('.'));
             filenamefordb = System.currentTimeMillis()+"";
         }
@@ -264,12 +354,12 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
 
                         storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                             @Override
-                            public void onSuccess(Uri downloadUrl) {
+                            public void onSuccess(Uri downloadUrl)
+                            {
                                 url = downloadUrl.toString();
 
                                 final DatabaseReference reference = database.getReference();      //return the path to the root
                                 //String url = taskSnapshot.getStorage().child("Uploads").child(u_name).child(filename).getDownloadUrl().toString();
-
 
                                 reference.child("Uploads").child(u_name).child(filenamefordb).child("Assignment Url").setValue(url).addOnCompleteListener(new OnCompleteListener<Void>()
                                 {
@@ -294,6 +384,8 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
                                             toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                                             toast.setView(getLayoutInflater().inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.custom_toast)));
                                             toast.show();
+
+                                            sendNotification(u_name,title);
                                         } else
                                             Toast.makeText(upload.this, "File Not Uploaded", Toast.LENGTH_LONG).show();
                                     }
@@ -337,13 +429,17 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(upload.this, "File Not Uploaded hi", Toast.LENGTH_SHORT).show();
             }
-        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>()
+        {
             @Override
-            public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+            public void onProgress(UploadTask.TaskSnapshot taskSnapshot)
+            {
                 //Track the progress of = Our upload...........
                 int currentprogress = (int) (100 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
+                progressBar.setProgress(currentprogress);
+                progresspercent.setText(currentprogress+" %");
 
-                Toast.makeText(upload.this, Integer.toString(currentprogress), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(upload.this, Integer.toString(currentprogress), Toast.LENGTH_SHORT).show();
 
                 /*for(int j=0;j<33;j++)
                 {
@@ -382,7 +478,7 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
                 //mView.show(getSupportFragmentManager(), "");
             }
 
-            int status = 0;
+            /*int status = 0;
             Handler handler = new Handler();
 
             String msg = "Atharva";
@@ -394,7 +490,7 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
                 dialog.setContentView(R.layout.upload);
 
                 final ProgressBar text = (ProgressBar) dialog.findViewById(R.id.progress_horizontal);
-                final TextView text2 = dialog.findViewById(R.id.value123);
+               // final TextView text2 = dialog.findViewById(R.id.value123);
 
 
                 new Thread(new Runnable() {
@@ -431,9 +527,56 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
 
                 Window window = dialog.getWindow();
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
-            }
+            }*/
         });
 
+    }
+    private void sendNotification(String mHeading, String mBody)
+    {
+        //user_email = user_email.substring(user_email.lastIndexOf('@'),user_email.length());
+        // if(user_email.contentEquals("adwaitgondhalekar@gmail.com"))
+        //FirebaseMessaging.getInstance().subscribeToTopic(" NONOTIFICATIONS");
+        //else
+        // FirebaseMessaging.getInstance().subscribeToTopic("NOTIFICATIONS");
+
+
+// init request
+        requestQueue = Volley.newRequestQueue(upload.this);
+
+        JSONObject mainObject = new JSONObject();
+        try {
+            mainObject.put("to", "/topics/" +"STUDENTS");
+            //mainObject.put("to","AoaWT33NagbjVo9xavS0mug6Sn83");
+            JSONObject notificationObject = new JSONObject();
+            notificationObject.put("title", mHeading);
+            notificationObject.put("body", mBody);
+            mainObject.put("notification", notificationObject);
+            JsonObjectRequest request = new
+                    JsonObjectRequest(Request.Method.POST, Url,
+                            mainObject, new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            // send successfully
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // failed
+                        }
+                    }
+                    ) {
+                        @Override
+                        public Map<String, String> getHeaders() throws AuthFailureError {
+                            Map<String, String> header = new HashMap<>();
+                            header.put("content-type", "application/json");
+                            header.put("authorization", "key=AIzaSyBt-7syrkRRd9Vc7k6-gNjbvuXNbh6wo4Y");
+                            return header;
+                        }
+                    };
+            requestQueue.add(request);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     //create notification channel if you target android 8.0 or higher version
@@ -489,6 +632,7 @@ public class upload extends AppCompatActivity implements View.OnClickListener, D
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth)
     {
+        duedateselected = true;
         due_d = dayOfMonth +"/"+ month + "/" + year;
 
         duedate_txt.setText(due_d);

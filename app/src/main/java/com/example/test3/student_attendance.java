@@ -136,7 +136,7 @@ public class student_attendance extends AppCompatActivity {
                                 background.setVisibility(View.VISIBLE);
                                 name.setText("Heyyy");// +value.substring(1,value.length()-1) + "!");
                                 progressBar.setVisibility(View.INVISIBLE);
-                                 gridLayout = findViewById(R.id.gridLayout);
+                                gridLayout = findViewById(R.id.gridLayout);
                                 gridLayout.setVisibility(View.VISIBLE);
 
                                 attendanceLayout.setVisibility(View.VISIBLE);
@@ -316,7 +316,7 @@ public class student_attendance extends AppCompatActivity {
         final WebView webView = findViewById(R.id.webviewHome);
         webView.loadUrl("https://erp.kkwagh.edu.in/STUDENT/SelfAttendence.aspx?MENU_CODE=MWEBSTUATTEN_SLF_ATTEN");
 
-       // webView.loadUrl("https://www.google.co.in");
+        // webView.loadUrl("https://www.google.co.in");
         //webView.loadUrl("https://erp.kkwagh.edu.in/STUDENT/SubjectlistSyllabus.aspx?MENU_CODE=MWEBSTUSYLL_SUBWS");
 
     }
@@ -326,7 +326,7 @@ public class student_attendance extends AppCompatActivity {
         background.setVisibility(View.GONE);
         attendanceLayout.setVisibility(View.GONE);
         btnLogout.setVisibility(View.GONE);
-         gridLayout = findViewById(R.id.gridLayout);
+        gridLayout = findViewById(R.id.gridLayout);
         gridLayout.setVisibility(View.GONE);
         final WebView webView = findViewById(R.id.webviewHome);
         webView.loadUrl("https://erp.kkwagh.edu.in/Student/StudentSelfTimeTable.aspx?MENU_CODE=MWEBSTUATTEN_TT");

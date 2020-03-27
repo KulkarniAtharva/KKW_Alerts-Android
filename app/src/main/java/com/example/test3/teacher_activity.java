@@ -65,6 +65,7 @@ public class teacher_activity extends AppCompatActivity implements NavigationVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teacher_activity);
 
+
         //user= mAuth.getCurrentUser();
 
         //textView = (TextView)findViewById(R.id.textViewname);

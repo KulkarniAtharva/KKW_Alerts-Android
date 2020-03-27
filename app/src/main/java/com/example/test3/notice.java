@@ -67,6 +67,7 @@ public class notice extends AppCompatActivity implements View.OnClickListener
     private String Url = "https://fcm.googleapis.com/fcm/send" ;
     private final String CHANNEL_ID = "big_text_style_notification";
     private final int NOTIFICATION_ID = 02;
+    boolean titleselected = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
@@ -84,6 +85,7 @@ public class notice extends AppCompatActivity implements View.OnClickListener
         textInputEditText = (TextInputEditText) findViewById(R.id.notice);
 
         teacher_name = MyObjects.getInstance().firebaseuser.getDisplayName();
+        user_email = MyObjects.getInstance().firebaseuser.getEmail();
         firebaseDatabase = FirebaseDatabase.getInstance();
         int yr = Calendar.getInstance().get(Calendar.YEAR);
         int m =  Calendar.getInstance().get(Calendar.MONTH);
@@ -113,8 +115,7 @@ public class notice extends AppCompatActivity implements View.OnClickListener
     }
 
     @Override
-    public void onClick(View v)
-    {
+    public void onClick(View v) {
         // Create the object of AlertDialog Builder class
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
@@ -129,111 +130,121 @@ public class notice extends AppCompatActivity implements View.OnClickListener
 
         // Set the positive button with yes name OnClickListener method is use of DialogInterface interface.
 
-        builder.setPositiveButton("Yes",new DialogInterface.OnClickListener()
-        {
-            @Override
-            public void onClick(DialogInterface dialog, int which)
-            {
-                notice = textInputEditText.getText().toString();
-                DatabaseReference databaseReference = firebaseDatabase.getReference();
-                noticetime = System.currentTimeMillis() + "";
+        notice = textInputEditText.getText().toString();
+        titleselected = false;
+        if (!(notice.isEmpty()))
+            titleselected = true;
 
-                databaseReference.child("Notices").child(teacher_name).child(noticetime).child("Date").setValue(date);
-                databaseReference.child("Notices").child(teacher_name).child(noticetime).child("Name").setValue(teacher_name);
-                databaseReference.child("Notices").child(teacher_name).child(noticetime).child("Text").setValue(notice);
+        if (titleselected == true) {
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    DatabaseReference databaseReference = firebaseDatabase.getReference();
+                    noticetime = System.currentTimeMillis() + "";
 
-                Toast.makeText(notice.this, "Notice Successfully Sent!!!", Toast.LENGTH_SHORT).show();
+                    databaseReference.child("Notices").child(teacher_name).child(noticetime).child("Date").setValue(date);
+                    // databaseReference.child("Notices").child(teacher_name).child(noticetime).child("Name").setValue(teacher_name);
+                    databaseReference.child("Notices").child(teacher_name).child(noticetime).child("Text").setValue(notice);
 
-                sendNotification(teacher_name, notice);
+                    Toast.makeText(notice.this, "Notice Successfully Sent!!!", Toast.LENGTH_SHORT).show();
 
-                // To send notification to teacher about successfully uploaded file
+                    //if(user_email.compareTo("adwaitgondhalekar@gmail.com")!=0)
+                    sendNotification(teacher_name, notice);
 
-                createNotificationChannel();
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID);
-                builder.setSmallIcon(R.drawable.horn);
-                builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.horn));
-                builder.setContentTitle("Notice Sent Successfully");
-                builder.setStyle(new NotificationCompat.BigTextStyle().bigText(notice));
-                builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                    // To send notification to teacher about successfully uploaded file
 
-                NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
-                notificationManagerCompat.notify(NOTIFICATION_ID, builder.build());
+                    createNotificationChannel();
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID);
+                    builder.setSmallIcon(R.drawable.horn);
+                    builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.horn));
+                    builder.setContentTitle("Notice Sent Successfully");
+                    builder.setStyle(new NotificationCompat.BigTextStyle().bigText(notice));
+                    builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
-            }
+                    NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
+                    notificationManagerCompat.notify(NOTIFICATION_ID, builder.build());
+                }
 
-            private void sendNotification(String mHeading, String mBody) {
-                FirebaseMessaging.getInstance().subscribeToTopic("NOTIFICATIONS");
+                private void sendNotification(String mHeading, String mBody) {
+                    //user_email = user_email.substring(user_email.lastIndexOf('@'),user_email.length());
+                    // if(user_email.contentEquals("adwaitgondhalekar@gmail.com"))
+                    //FirebaseMessaging.getInstance().subscribeToTopic(" NONOTIFICATIONS");
+                    //else
+                    // FirebaseMessaging.getInstance().subscribeToTopic("NOTIFICATIONS");
+
 
 // init request
-                requestQueue = Volley.newRequestQueue(notice.this);
+                    requestQueue = Volley.newRequestQueue(notice.this);
 
-                JSONObject mainObject = new JSONObject();
-                try {
-                    mainObject.put("to", "/topics/" + "NOTIFICATIONS");
-                    JSONObject notificationObject = new JSONObject();
-                    notificationObject.put("title", mHeading);
-                    notificationObject.put("body", mBody);
-                    mainObject.put("notification", notificationObject);
-                    JsonObjectRequest request = new
-                            JsonObjectRequest(Request.Method.POST, Url,
-                                    mainObject, new Response.Listener<JSONObject>() {
-                                @Override
-                                public void onResponse(JSONObject response) {
-                                    // send successfully
+                    JSONObject mainObject = new JSONObject();
+                    try {
+                        mainObject.put("to", "/topics/" + "STUDENTS");
+                        //mainObject.put("to","AoaWT33NagbjVo9xavS0mug6Sn83");
+                        JSONObject notificationObject = new JSONObject();
+                        notificationObject.put("title", mHeading);
+                        notificationObject.put("body", mBody);
+                        mainObject.put("notification", notificationObject);
+                        JsonObjectRequest request = new
+                                JsonObjectRequest(Request.Method.POST, Url,
+                                        mainObject, new Response.Listener<JSONObject>() {
+                                    @Override
+                                    public void onResponse(JSONObject response) {
+                                        // send successfully
+                                    }
+                                }, new Response.ErrorListener() {
+                                    @Override
+                                    public void onErrorResponse(VolleyError error) {
+                                        // failed
+                                    }
                                 }
-                            }, new Response.ErrorListener() {
-                                @Override
-                                public void onErrorResponse(VolleyError error) {
-                                    // failed
-                                }
-                            }
-                            ) {
-                                @Override
-                                public Map<String, String> getHeaders() throws AuthFailureError {
-                                    Map<String, String> header = new HashMap<>();
-                                    header.put("content-type", "application/json");
-                                    header.put("authorization", "key=AIzaSyBt-7syrkRRd9Vc7k6-gNjbvuXNbh6wo4Y");
-                                    return header;
-                                }
-                            };
-                    requestQueue.add(request);
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                                ) {
+                                    @Override
+                                    public Map<String, String> getHeaders() throws AuthFailureError {
+                                        Map<String, String> header = new HashMap<>();
+                                        header.put("content-type", "application/json");
+                                        header.put("authorization", "key=AIzaSyBt-7syrkRRd9Vc7k6-gNjbvuXNbh6wo4Y");
+                                        return header;
+                                    }
+                                };
+                        requestQueue.add(request);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
 
-            // Send notice to teacher of successfull notice sent
-            //create notification channel if you target android 8.0 or higher version
-            private void createNotificationChannel() {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    CharSequence name = "BigTextStyle Notification";
-                    String description = "Include all the BigTextStyle notification";
-                    int importance = NotificationManager.IMPORTANCE_DEFAULT;
+                // Send notice to teacher of successfull notice sent
+                //create notification channel if you target android 8.0 or higher version
+                private void createNotificationChannel() {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        CharSequence name = "BigTextStyle Notification";
+                        String description = "Include all the BigTextStyle notification";
+                        int importance = NotificationManager.IMPORTANCE_DEFAULT;
 
-                    NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, name, importance);
-                    notificationChannel.setDescription(description);
+                        NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, name, importance);
+                        notificationChannel.setDescription(description);
 
-                    NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                    notificationManager.createNotificationChannel(notificationChannel);
+                        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                        notificationManager.createNotificationChannel(notificationChannel);
+                    }
                 }
-            }
-        });
+            });
 
-        // Set the Negative button with No name OnClickListener method is use of DialogInterface interface.
-        builder.setNegativeButton("No",new DialogInterface.OnClickListener()
-        {
-            @Override
-            public void onClick(DialogInterface dialog, int which)
-            {
-                // If user click no then dialog box is canceled.
-                dialog.cancel();
-            }
-        });
 
-        // Create the Alert dialog
-        AlertDialog alertDialog = builder.create();
+            // Set the Negative button with No name OnClickListener method is use of DialogInterface interface.
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // If user click no then dialog box is canceled.
+                    dialog.cancel();
+                }
+            });
 
-        // Show the Alert Dialog box
-        alertDialog.show();
+            // Create the Alert dialog
+            AlertDialog alertDialog = builder.create();
+
+            // Show the Alert Dialog box
+            alertDialog.show();
+        } else
+            Toast.makeText(this, "Subject is empty !!!", Toast.LENGTH_SHORT).show();
     }
 }

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\adwai\\AndroidStudioProjects\\KKW_Alerts\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
+            "outputFile": "C:\\Users\\athar\\StudioProjects\\KKW_Alerts\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\adwai\\.gradle\\caches\\transforms-2\\files-2.1\\09884e4f09dcb45cba6db7aeffefa6be\\material-1.1.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\athar\\.gradle\\caches\\transforms-2\\files-2.1\\09884e4f09dcb45cba6db7aeffefa6be\\material-1.1.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

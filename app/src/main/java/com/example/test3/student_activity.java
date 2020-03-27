@@ -26,6 +26,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.roger.catloadinglibrary.CatLoadingView;
 
 public class student_activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
@@ -55,6 +56,7 @@ public class student_activity extends AppCompatActivity implements NavigationVie
 
         //setTitle(obj.personName);
         //getActionBar().setIcon(R.drawable.(obj.personPhoto));
+
 
         // account = GoogleSignIn.getLastSignedInAccount(this);
         personName = mAuth.getCurrentUser().getDisplayName();
@@ -158,6 +160,8 @@ public class student_activity extends AppCompatActivity implements NavigationVie
                         download();
                     else if(fin == 1)
                         show_notice();
+                    else if(fin == 2)
+                        timetable();
                     else if(fin == 3)
                         attendance();
                 }
@@ -206,6 +210,12 @@ public class student_activity extends AppCompatActivity implements NavigationVie
     void attendance()
     {
         Intent intent = new Intent(this, stud_attendance.class);
+        startActivity(intent);
+    }
+
+    void timetable()
+    {
+        Intent intent = new Intent(this, timetable.class);
         startActivity(intent);
     }
 

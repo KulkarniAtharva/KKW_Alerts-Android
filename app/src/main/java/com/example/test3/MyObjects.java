@@ -6,31 +6,32 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MyObjects
 {
-    protected GoogleSignInClient mGoogleSignInClient;
-    protected FirebaseUser firebaseuser;
-    private static final MyObjects ourInstance = new MyObjects();
+  protected GoogleSignInClient mGoogleSignInClient;
+  protected FirebaseUser firebaseuser;
+  private static final MyObjects ourInstance = new MyObjects();
 
-    public static MyObjects getInstance()
-    {
-        return ourInstance;
-    }
+  public static MyObjects getInstance()
+  {
+    return ourInstance;
+  }
 
-    private MyObjects()
-    {
-    }
+  private MyObjects()
+  {
+  }
 
-    protected void GetGoogleSignInclient(GoogleSignInClient mGoogleSignInclient)
-    {
-        this.mGoogleSignInClient = mGoogleSignInclient;
-    }
-    protected void SignOut()
-    {
-        mGoogleSignInClient.signOut();
-        FirebaseAuth.getInstance().signOut();
-    }
-    protected void GetFireBaseUser(FirebaseUser firebaseUser)
+  protected void GetGoogleSignInclient(GoogleSignInClient mGoogleSignInclient)
+  {
+    this.mGoogleSignInClient = mGoogleSignInclient;
+  }
+  protected void SignOut()
+  {
+    mGoogleSignInClient.signOut();
+    FirebaseAuth.getInstance().signOut();
+  }
+  protected void GetFireBaseUser(FirebaseUser firebaseUser)
 
-    {
-        this.firebaseuser = firebaseUser;
-    }
+  {
+    this.firebaseuser = firebaseUser;
+  }
+
 }
