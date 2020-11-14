@@ -2,26 +2,38 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="180dp"
+    android:layout_height="200dp"
     android:orientation="vertical"
-    android:background="#0F9D58"
-    android:gravity="bottom"
+    android:background="@drawable/gradient_toolbar"
     android:padding="16dp">
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="110dp"
-        android:src="@drawable/horn"
-        />
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/user_photo"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/white"
+        android:layout_marginTop="30dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
-        android:text="KKW Alerts"
-        android:textSize="20dp"
-        android:textStyle="bold|italic"
+        android:id="@+id/user_name"
+        android:textSize="16dp"
+        android:layout_marginTop="22dp"
+        android:textStyle="bold"
         android:textColor="#FFFFFF"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:id="@+id/email"
+        android:textSize="12dp"
+        android:textColor="#FFFFFF"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 </LinearLayout>

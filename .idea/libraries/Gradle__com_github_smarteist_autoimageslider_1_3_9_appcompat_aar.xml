@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.smarteist:autoimageslider:1.3.9-appcompat@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e58c04c19d3c38a09656ce505e179bcb/jetified-autoimageslider-1.3.9-appcompat/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e58c04c19d3c38a09656ce505e179bcb/jetified-autoimageslider-1.3.9-appcompat/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/641928ff6d1efe6141ed55b869e3c26c/jetified-autoimageslider-1.3.9-appcompat/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/641928ff6d1efe6141ed55b869e3c26c/jetified-autoimageslider-1.3.9-appcompat/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/641928ff6d1efe6141ed55b869e3c26c/jetified-autoimageslider-1.3.9-appcompat/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f53cddb2459d03c8ee7c2744ef9feac0/jetified-autoimageslider-1.3.9-appcompat/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f53cddb2459d03c8ee7c2744ef9feac0/jetified-autoimageslider-1.3.9-appcompat/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f53cddb2459d03c8ee7c2744ef9feac0/jetified-autoimageslider-1.3.9-appcompat/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.smarteist/autoimageslider/1.3.9-appcompat/f7b1cdc0793c143a874df41299ff7ccd8c52e43f/autoimageslider-1.3.9-appcompat-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.smarteist/autoimageslider/1.3.9-appcompat/ff711ecdb447013106b1eba445e3bc391f9b247/autoimageslider-1.3.9-appcompat-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

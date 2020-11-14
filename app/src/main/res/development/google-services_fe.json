@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "252227408959",
+    "firebase_url": "https://kkw-alerts---comp.firebaseio.com",
+    "project_id": "kkw-alerts---comp",
+    "storage_bucket": "kkw-alerts---comp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252227408959:android:06723641f1c807e436d48a",
+        "android_client_info": {
+          "package_name": "com.example.test3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "252227408959-qjid9hr2g83pjngrr9m7gtvjjfmk1j68.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnoAP94V_gUJbE86exGeV7pRL08TcKI3s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "252227408959-qjid9hr2g83pjngrr9m7gtvjjfmk1j68.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

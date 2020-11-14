@@ -7,4 +7,17 @@
     <string name="open">Open navigation</string>
     <string name="close">Close navigation</string>
 
+    <string name="Atharva">
+        <a href="https://kulkarniatharva.github.io/">Website</a>
+    </string>
+    <string name="Adwait">
+        <a href="https://www.linkedin.com/in/adwait-gondhalekar-a37387191/">LinkedIn</a>
+    </string>
+    <string name="Shreya">
+        <a href="https://www.linkedin.com/in/shreya-kedia-3a24aa1a4/">LinkedIn</a>
+    </string>
+    <string name="Radha">
+        <a href="https://www.linkedin.com/in/radha-mujumdar-b978b3173/">LinkedIn</a>
+    </string>
+
 </resources>

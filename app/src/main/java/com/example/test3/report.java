@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 
@@ -38,15 +39,27 @@ public class report extends AppCompatActivity
                 String subject = textInputEditText1.getText().toString();
                 String message = textInputEditText2.getText().toString();
 
-                Intent email = new Intent(Intent.ACTION_SEND);
-                email.putExtra(Intent.EXTRA_EMAIL, new String[]{ to});
-                //email.putExtra(Intent.EXTRA_CC, new String[]{ to});
-                //email.putExtra(Intent.EXTRA_BCC, new String[]{to});
-                email.putExtra(Intent.EXTRA_SUBJECT, subject);
-                email.putExtra(Intent.EXTRA_TEXT, message);
-                //need this to prompts email client only
-                email.setType("message/rfc822");
-                startActivity(Intent.createChooser(email, "Choose an Email client :"));
+                if(TextUtils.isEmpty(subject) && TextUtils.isEmpty(message))
+                {
+                    textInputEditText1.setError("Subject is Mandatory");
+                    textInputEditText2.setError("Message is Mandatory");
+                }
+                else if(TextUtils.isEmpty(message))
+                    textInputEditText2.setError("Message is Mandatory");
+                else if(TextUtils.isEmpty(subject))
+                    textInputEditText1.setError("Subject is Mandatory");
+                else
+                    {
+                    Intent email = new Intent(Intent.ACTION_SEND);
+                    email.putExtra(Intent.EXTRA_EMAIL, new String[]{to});
+                    //email.putExtra(Intent.EXTRA_CC, new String[]{ to});
+                    //email.putExtra(Intent.EXTRA_BCC, new String[]{to});
+                    email.putExtra(Intent.EXTRA_SUBJECT, subject);
+                    email.putExtra(Intent.EXTRA_TEXT, message);
+                    //need this to prompts email client only
+                    email.setType("message/rfc822");
+                    startActivity(Intent.createChooser(email, "Choose an Email client :"));
+                }
             }
         });
 
@@ -57,13 +70,15 @@ public class report extends AppCompatActivity
         ActionBar actionBar = getSupportActionBar();
 
         // Define ColorDrawable object and parse color using parseColor method with color hash code as its parameter
-        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#0F9D58"));
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#1976D3"));
 
         // Set BackgroundDrawable
+        assert actionBar != null;
         actionBar.setBackgroundDrawable(colorDrawable);
-        actionBar.setTitle("Report");
+        actionBar.setTitle("Report bugs");
 
-        getWindow().setStatusBarColor(getResources().getColor(R.color.green, this.getTheme()));
+        getWindow().setStatusBarColor(getResources().getColor(R.color.darkblue, this.getTheme()));
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.darkblue,this.getTheme()));
 
         actionBar.setDisplayHomeAsUpEnabled(true);      // For back button to be displayed on toolbar
     }

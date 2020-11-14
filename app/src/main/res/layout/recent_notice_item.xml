@@ -40,11 +40,33 @@
                 android:gravity="right" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="To  :-"
+                android:textColor="@color/green" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/year"
+                android:layout_marginLeft="30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/division"
+                android:layout_marginLeft="10dp"/>
+
+        </LinearLayout>
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -54,6 +76,5 @@
                 android:layout_marginLeft="330dp"
                 android:id="@+id/deletebtn"/>
 
-        </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -15,15 +15,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/tool_Bar"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#0F9D58"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:titleTextColor="#FFFFFF"
-            android:elevation="4dp"/>
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+            <include layout="@layout/custom_toolbar_studentteacher_activity"/>
+        </LinearLayout>
 
         <FrameLayout
             android:id="@+id/framge_container"
@@ -33,34 +30,26 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#BAE3E8"
+                android:background="@color/white"
                 android:orientation="vertical"
                 android:weightSum="10">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:layout_weight="2"
-                    android:background="#0F2C5E">
-
-                    <TextView
-                        android:id="@+id/name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="sans-serif"
-                        android:textColor="@android:color/white"
-                        android:textSize="34sp" />
-
-                </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Favourite Menu"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:padding="20dp"/>
 
                 <GridLayout
                     android:id="@+id/grid"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="8"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
                     android:alignmentMode="alignMargins"
-                    android:columnCount="2"
+                    android:columnCount="3"
                     android:padding="14dp"
                     android:rowCount="2">
 
@@ -72,8 +61,9 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
                         android:layout_marginBottom="25dp"
-                        app:cardCornerRadius="30dp"
-                        app:cardElevation="8dp">
+                        app:cardCornerRadius="3dp"
+                        app:cardElevation="8dp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -92,10 +82,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
-                                android:text="ASSIGNMENT"
+                                android:text="Download from College"
                                 android:textColor="@android:color/black"
-                                android:textSize="18sp"
-                                android:textStyle="bold|italic" />
+                                android:textSize="15sp" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -108,8 +97,9 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
                         android:layout_marginBottom="25dp"
-                        app:cardCornerRadius="30dp"
-                        app:cardElevation="8dp">
+                        app:cardCornerRadius="3dp"
+                        app:cardElevation="8dp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -128,10 +118,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
-                                android:text="NOTICE"
+                                android:text="Notice"
                                 android:textColor="@android:color/black"
-                                android:textSize="18sp"
-                                android:textStyle="bold|italic" />
+                                android:textSize="15sp" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -144,8 +133,9 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
                         android:layout_marginBottom="25dp"
-                        app:cardCornerRadius="30dp"
-                        app:cardElevation="8dp">
+                        app:cardCornerRadius="3dp"
+                        app:cardElevation="8dp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -163,11 +153,10 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="20dp"
+                                android:layout_marginStart="20dp"
                                 android:textColor="@android:color/black"
-                                android:textSize="18sp"
-                                android:textStyle="bold|italic"
-                                android:text="TIMETABLE"/>
+                                android:textSize="15sp"
+                                android:text="Timetable"/>
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -180,8 +169,9 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
                         android:layout_marginBottom="25dp"
-                        app:cardCornerRadius="30dp"
-                        app:cardElevation="8dp">
+                        app:cardCornerRadius="3dp"
+                        app:cardElevation="8dp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -194,7 +184,79 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="155dp"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@drawable/attendance" />
+                                android:src="@drawable/attendance"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="Attendance"
+                                android:textColor="@android:color/black"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="25dp"
+                        app:cardCornerRadius="3dp"
+                        app:cardElevation="8dp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_margin="16dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="155dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/attendance"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="Upload to College"
+                                android:textColor="@android:color/black"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="25dp"
+                        app:cardCornerRadius="3dp"
+                        app:cardElevation="8dp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_margin="16dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="155dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/attendance"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -202,18 +264,14 @@
                                 android:layout_gravity="center_horizontal"
                                 android:text="ATTENDANCE"
                                 android:textColor="@android:color/black"
-                                android:textSize="18sp"
-                                android:textStyle="bold|italic" />
+                                android:textSize="15sp" />
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
                 </GridLayout>
             </LinearLayout>
-
         </FrameLayout>
-
     </LinearLayout>
-
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
@@ -221,23 +279,15 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/navigation_header"
-        app:menu="@menu/navigation_menu">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:orientation="vertical"
-            android:padding="16dp">
+        app:menu="@menu/navigation_menu_student">
 
             <TextView
-                android:id="@+id/logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Version 1.0" />
-        </LinearLayout>
+                android:text="Version 1.0"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="26dp"/>
 
     </com.google.android.material.navigation.NavigationView>
-
 </androidx.drawerlayout.widget.DrawerLayout>

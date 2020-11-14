@@ -5,4 +5,23 @@
     <color name="colorAccent">#DC2A96E9</color>
     <color name="brown">#690101</color>
     <color name="green">#0F9D58</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#808080</color>
+    <color name="darkgreen">#006400</color>
+    <color name="lightgreen">#90EE90</color>
+    <color name="black">#000000</color>
+    <color name="lightgray">#DCDCDC</color>
+    <color name="lightgreen2">#CCFFE5</color>
+    <color name="red">#FF0000</color>
+    <color name="darkmagenta">#8B008B</color>
+    <color name="lavender">#E6E6FA</color>
+    <color name="magenta">#FF00FF</color>
+    <color name="lightviolet">#EE82EE</color>
+    <color name="deepskyblue">#00BFFF</color>
+    <color name="blue">#1976D3</color>
+    <color name="darkblue">#1564C0</color>
+    <color name="lightblue1">#BFEFFF</color>
+    <color name="violet">#3f51b5</color>
+    <color name="gainsboro">#DCDCDC</color>
+
 </resources>

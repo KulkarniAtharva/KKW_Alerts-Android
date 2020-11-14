@@ -1,9 +1,14 @@
 package com.example.test3;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -12,16 +17,17 @@ import android.view.animation.LayoutAnimationController;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import com.roger.catloadinglibrary.CatLoadingView;
+
 
 public class stud_attendance extends AppCompatActivity
 {
     WebView webView;
-    CatLoadingView mView;
+    ImageView imageView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
@@ -32,23 +38,42 @@ public class stud_attendance extends AppCompatActivity
         ActionBar actionBar = getSupportActionBar();
 
         // Define ColorDrawable object and parse color using parseColor method with color hash code as its parameter
-        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#0F9D58"));
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#1976D3"));
 
         // Set BackgroundDrawable
         actionBar.setBackgroundDrawable(colorDrawable);
         actionBar.setTitle("Your Attendance");
 
-        getWindow().setStatusBarColor(getResources().getColor(R.color.green, this.getTheme()));
+        getWindow().setStatusBarColor(getResources().getColor(R.color.darkblue, this.getTheme()));
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.darkblue,this.getTheme()));
 
-        actionBar.setDisplayHomeAsUpEnabled(true);      // For back button to be displayed on toolbar
 
-        webView = (WebView) findViewById(R.id.webview);
-        webView.loadUrl("https://erp.kkwagh.edu.in/STUDENT/SelfAttendence.aspx?MENU_CODE=MWEBSTUATTEN_SLF_ATTEN");
-        webView.setWebViewClient(new WebViewClient());
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
+        boolean status = isNetworkConnectionAvailable();
 
-        //mView = new CatLoadingView();
+        if(!status)
+        {
+            /*Intent intent = new Intent(this, nointernetpage.class);
+            startActivity(intent);
+
+            finish();*/
+
+            imageView = findViewById(R.id.nointernetpage);
+            imageView.setVisibility(View.VISIBLE);
+
+            actionBar.setTitle("");
+        }
+        else
+            {
+            webView = (WebView) findViewById(R.id.webview);
+            webView.loadUrl("https://erp.kkwagh.edu.in/STUDENT/SelfAttendence.aspx?MENU_CODE=MWEBSTUATTEN_SLF_ATTEN");
+            webView.setWebViewClient(new WebViewClient());
+            WebSettings webSettings = webView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+
+            actionBar.setDisplayHomeAsUpEnabled(true);      // For back button to be displayed on toolbar
+
+            //mView = new CatLoadingView();
+        }
     }
 
     public class WebViewClient extends android.webkit.WebViewClient
@@ -63,6 +88,22 @@ public class stud_attendance extends AppCompatActivity
             //mView.show(getSupportFragmentManager(),"");
         }
 
+       /* @Override
+        public void onLoadResource(WebView view, String url)
+         {
+            super.onLoadResource(view, url);
+
+            try
+            {
+                webView.loadUrl("javascript:var footer = document.getElementById(\"colophon\");"+"footer.parentNode.removeChild(footer);"+
+                        "var header = document.getElementById(\"masthead\");"+"header.parentNode.removeChild(header);");
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+        }*/
+
         @Override
         public void onPageFinished(WebView view, String url)
         {
@@ -70,6 +111,30 @@ public class stud_attendance extends AppCompatActivity
             findViewById(R.id.loading).setVisibility(View.GONE);
 
             //mView.dismiss();
+        }
+    }
+
+    public void checkNetworkConnection()
+    {
+
+    }
+
+    public boolean isNetworkConnectionAvailable()
+    {
+        ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null && activeNetwork.isConnected();
+        if(isConnected)
+        {
+            Log.d("Network", "Connected");
+            return true;
+        }
+        else
+        {
+            checkNetworkConnection();
+            Log.d("Network","Not Connected");
+            return false;
         }
     }
 

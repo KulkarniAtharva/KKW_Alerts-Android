@@ -1,1 +1,6 @@
-[]
+{
+  "version": 1,
+  "applicationId": "com.example.test3",
+  "variantType": "BASE_APK",
+  "elements": []
+}

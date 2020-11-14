@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="150sp"
+    android:background="@drawable/gradient_toolbar"
+    android:paddingTop="50dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_Bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ToolbarTheme"
+        android:background="@android:color/transparent"/>
+
+</LinearLayout>
