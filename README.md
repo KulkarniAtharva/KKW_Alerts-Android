@@ -3,7 +3,7 @@ An educational app developed for teachers and students which includes uploading 
 
 
 
-
+## 📸 Screenshots
 
 <table>
   <tr>
@@ -61,3 +61,40 @@ An educational app developed for teachers and students which includes uploading 
     <td><img src="https://user-images.githubusercontent.com/47221267/99144643-87788980-268d-11eb-8489-cbac6928145f.jpg" width="250px"></td>
   </tr>
 </table>
+
+
+<BR><BR>
+   
+## Features
+
+<BR><BR>
+  
+  
+## Built With 🛠
+
+
+### Other Concepts included
+- RecyclerView
+- GridView
+- CardView
+- CircularImageView
+- ImageSlider
+- Fragments
+- Passing data between activities, fragments
+- SearchView
+- SwipeRefresh
+- BottomSheet
+
+## 📱 Contact - Let's become friend  🤝
+- [Portfolio Website](https://kulkarniatharva.github.io/)
+- [Github](https://github.com/KulkarniAtharva)
+- [LinkedIn](https://www.linkedin.com/in/atharva-kulkarni-146279187/)
+- [Facebook](https://www.facebook.com/atharva.kulkarni.96343/)
+
+
+
+<BR><BR>
+  
+  
+   
+ ## 📜 Licence
