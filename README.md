@@ -1,5 +1,5 @@
 # KKW Alerts
-An app developed for teachers and students which includes uploading and downloading of assignments and notices.
+An educational app developed for teachers and students which includes uploading and downloading of assignments and notices.
 
 
 
@@ -19,12 +19,23 @@ An app developed for teachers and students which includes uploading and download
   
   <tr>
     <th>Delete confirmation</th>
-    <th></th>
-    <th></th>
+    <th>Exit Dialog</th>
+    <th>Filters</th>
   </tr>
   <tr>
     <td><img src="https://user-images.githubusercontent.com/47221267/99143936-b0961b80-2687-11eb-89f8-a653386aea19.jpg" width="250px"></td>
-    <td><img src="" width="250px"</td>
+    <td><img src="https://user-images.githubusercontent.com/47221267/99144041-96107200-2688-11eb-9dc0-d2678bea746a.jpg" width="250px"></td>
+    <td><img src="https://user-images.githubusercontent.com/47221267/99144137-3797c380-2689-11eb-81c8-494837d389ef.jpg" width="250px"></td>
+  </tr>
+  
+  <tr>
+    <th>Home</th>
+    <th>Notice</th>
+    <th>Notices</th>
+  </tr>
+  <tr>
+    <td><img src="https://user-images.githubusercontent.com/47221267/99143936-b0961b80-2687-11eb-89f8-a653386aea19.jpg" width="250px"></td>
+    <td><img src="https://user-images.githubusercontent.com/47221267/99144041-96107200-2688-11eb-9dc0-d2678bea746a.jpg" width="250px"</td>
     <td></td>
   </tr>
 </table>
