@@ -110,6 +110,7 @@ An educational app developed for teachers and students which includes uploading 
    
  ## 📜 Licence
 
+```
 Copyright 2020 Atharva Kulkarni
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -123,3 +124,5 @@ Copyright 2020 Atharva Kulkarni
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+   
+   ```
