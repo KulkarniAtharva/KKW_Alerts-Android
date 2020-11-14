@@ -72,6 +72,15 @@ An educational app developed for teachers and students which includes uploading 
   
 ## Built With 🛠
 
+- Firebase realtime database
+- Firebase cloud firestore
+- Firebase cloud messaging(FCM)
+- Firebase offline data persistence
+- Firebase Google Authentication
+- Firebase storage
+- Android SQLite Database
+
+<BR>
 
 ### Other Concepts included
 - RecyclerView
@@ -84,6 +93,8 @@ An educational app developed for teachers and students which includes uploading 
 - SearchView
 - SwipeRefresh
 - BottomSheet
+
+<BR>
 
 ## 📱 Contact - Let's become friend  🤝
 - [Portfolio Website](https://kulkarniatharva.github.io/)
