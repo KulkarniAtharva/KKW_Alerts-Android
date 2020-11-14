@@ -13,8 +13,8 @@ An educational app developed for teachers and students which includes uploading 
   </tr>
   <tr>
     <td><img src="https://user-images.githubusercontent.com/47221267/99143611-de2d9580-2684-11eb-8f1e-ca7c1c3d89b5.jpg" width="250px"></td>
-    <td><img src="https://user-images.githubusercontent.com/47221267/99143843-cbb45b80-2686-11eb-9133-addb8f7048a2.jpg" width="250px"</td>
-    <td><img src="https://user-images.githubusercontent.com/47221267/99143880-1a61f580-2687-11eb-9e5c-a09e4f5b671d.jpg" width="250px"</td>
+    <td><img src="https://user-images.githubusercontent.com/47221267/99143843-cbb45b80-2686-11eb-9133-addb8f7048a2.jpg" width="250px"></td>
+    <td><img src="https://user-images.githubusercontent.com/47221267/99143880-1a61f580-2687-11eb-9e5c-a09e4f5b671d.jpg" width="250px"></td>
   </tr>
   
   <tr>
@@ -34,8 +34,30 @@ An educational app developed for teachers and students which includes uploading 
     <th>Notices</th>
   </tr>
   <tr>
-    <td><img src="https://user-images.githubusercontent.com/47221267/99143936-b0961b80-2687-11eb-89f8-a653386aea19.jpg" width="250px"></td>
-    <td><img src="https://user-images.githubusercontent.com/47221267/99144041-96107200-2688-11eb-9dc0-d2678bea746a.jpg" width="250px"</td>
-    <td></td>
+    <td><img src="https://user-images.githubusercontent.com/47221267/99144295-b2ada980-268a-11eb-9c13-3b5965780575.jpg" width="250px"></td>
+    <td><img src="https://user-images.githubusercontent.com/47221267/99144363-2d76c480-268b-11eb-8cb1-de67e47c284d.jpg" width="250px"></td>
+    <td><img src="https://user-images.githubusercontent.com/47221267/99144437-e3daa980-268b-11eb-9703-b43376cb2abc.jpg" width="250px"></td>
+  </tr>
+  
+  <tr>
+    <th>Recent Notice</th>
+    <th>Recent Upload</th>
+    <th>Recent Uploads</th>
+  </tr>
+  <tr>
+    <td><img src="https://user-images.githubusercontent.com/47221267/99144458-171d3880-268c-11eb-93cc-6a312528dfda.jpg" width="250px"></td>
+    <td><img src="https://user-images.githubusercontent.com/47221267/99144509-84c96480-268c-11eb-9042-237755de637d.jpg" width="250px"></td>
+    <td><img src="https://user-images.githubusercontent.com/47221267/99144553-cc4ff080-268c-11eb-80d8-0854e14f60f4.jpg" width="250px"></td>
+  </tr>
+  
+  <tr>
+    <th>Report bugs</th>
+    <th>Navigation drawer</th>
+    <th>Upload</th>
+  </tr>
+  <tr>
+    <td><img src="https://user-images.githubusercontent.com/47221267/99144602-294ba680-268d-11eb-8353-def75152de2d.jpg" width="250px"></td>
+    <td><img src="https://user-images.githubusercontent.com/47221267/99144618-5435fa80-268d-11eb-9bf9-f0828a03227d.jpg" width="250px"></td>
+    <td><img src="https://user-images.githubusercontent.com/47221267/99144643-87788980-268d-11eb-8489-cbac6928145f.jpg" width="250px"></td>
   </tr>
 </table>
