@@ -21,16 +21,26 @@ public class about  extends AppCompatActivity
         ActionBar actionBar = getSupportActionBar();
 
         // Define ColorDrawable object and parse color using parseColor method with color hash code as its parameter
-        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#0F9D58"));
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#1976D3"));
 
         // Set BackgroundDrawable
         actionBar.setBackgroundDrawable(colorDrawable);
 
         actionBar.setTitle("About");
 
-        getWindow().setStatusBarColor(getResources().getColor(R.color.green, this.getTheme()));
+        getWindow().setStatusBarColor(getResources().getColor(R.color.darkblue, this.getTheme()));
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.darkblue,this.getTheme()));
 
         actionBar.setDisplayHomeAsUpEnabled(true);      // For back button to be displayed on toolbar
+
+        TextView textView1 =(TextView) findViewById(R.id.atharva);
+        textView1.setMovementMethod(LinkMovementMethod.getInstance());
+        TextView textView2 =(TextView) findViewById(R.id.adwait);
+        textView2.setMovementMethod(LinkMovementMethod.getInstance());
+        TextView textView3 =(TextView) findViewById(R.id.shreya);
+        textView3.setMovementMethod(LinkMovementMethod.getInstance());
+        TextView textView4 =(TextView) findViewById(R.id.radha);
+        textView4.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     // For back button on toolbar

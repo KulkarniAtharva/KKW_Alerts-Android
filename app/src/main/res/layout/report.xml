@@ -12,7 +12,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="60dp"
         android:hint="Subject"
-        android:textColorHint="@color/green"
+        android:textColorHint="@color/blue"
         app:counterEnabled="true"
         app:counterMaxLength="50"
         app:endIconDrawable="@drawable/subject"
@@ -33,7 +33,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="30dp"
         android:hint="Message"
-        android:textColorHint="@color/green"
+        android:textColorHint="@color/blue"
         app:counterEnabled="true"
         app:counterMaxLength="500"
         app:endIconDrawable="@drawable/message"
@@ -49,12 +49,15 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="SEND"
+        android:textColor="@color/white"
         android:id="@+id/sendbtn"
         android:layout_gravity="center"
-        android:background="@color/green"
-        android:drawableRight="@drawable/send"/>
+        android:background="@drawable/button_background"
+        android:drawableRight="@drawable/send"
+        android:paddingRight="10dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"/>
 
 </LinearLayout>

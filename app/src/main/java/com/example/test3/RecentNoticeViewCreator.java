@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.lang.reflect.Array;
+import java.time.Year;
 import java.util.ArrayList;
 
 public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeViewCreator.ViewHolder>
@@ -27,6 +28,8 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
     RecyclerView recyclerView;
 
     Context context;
+    ArrayList<String> years = new ArrayList<>();
+    ArrayList<String> divisions = new ArrayList<>();
     ArrayList<String> dates = new ArrayList<>();
     ArrayList<String> notices = new ArrayList<>();
 
@@ -34,18 +37,22 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
     ArrayList<String>noticesids = new ArrayList<>();
     String teachername;
 
-    public void update(String date,String text,String noticeid)
+    public void update(String year,String division,String date,String text,String noticeid)
     {
+        years.add(year);
+        divisions.add(division);
         dates.add(date);
         notices.add(text);
         noticesids.add(noticeid);//new change
         notifyDataSetChanged();  // refreshes the recycler view automatically
     }
 
-    public RecentNoticeViewCreator(RecyclerView recyclerView, Context context, ArrayList<String> dates, ArrayList<String> notices, ArrayList<String> noticeids)
+    public RecentNoticeViewCreator(RecyclerView recyclerView, Context context,ArrayList<String> years,ArrayList<String> divisions, ArrayList<String> dates, ArrayList<String> notices, ArrayList<String> noticeids)
     {
         this.recyclerView = recyclerView;
         this.context = context;
+        this.years = years;
+        this.divisions = divisions;
         this.dates = dates;
         this.notices = notices;
         this.noticesids= noticeids;
@@ -65,6 +72,8 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
         // initialize the elements of indiv,items
         holder.Date.setText(dates.get(position));
         holder.Content.setText(notices.get(position));
+        holder.Year.setText(years.get(position));
+        holder.Division.setText(divisions.get(position));
         //holder.Noticeid.setText(noticesids.get(position));
 
         holder.imageButton.setOnClickListener(new View.OnClickListener()
@@ -99,11 +108,15 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
                                         final String notice = notices.get(position);
                                         final String date = dates.get(position);
                                         final String notice_id = noticesids.get(position);
+                                        final String year = years.get(position);
+                                        final String division = divisions.get(position);
 
                                         teachername = MyObjects.getInstance().firebaseuser.getDisplayName();
+
+
                                         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
-                                        DatabaseReference databaseReference = firebaseDatabase.getReference().child("Notices").child(teachername);
+                                        DatabaseReference databaseReference = firebaseDatabase.getReference().child("Notices").child(year).child(division).child(teachername);
 
                                         databaseReference.addChildEventListener(new ChildEventListener() {
                                             @Override
@@ -119,6 +132,9 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
                                                         if(noticetext.contentEquals(notice) && notice_id.contentEquals(noticeid))
                                                         {
                                                             childSnapshot.getRef().getParent().removeValue();
+
+                                                            years.remove(position);
+                                                            divisions.remove(position);
                                                             dates.remove(position);
                                                             notices.remove(position);
                                                             noticesids.remove(position);
@@ -191,14 +207,15 @@ public class RecentNoticeViewCreator extends RecyclerView.Adapter<RecentNoticeVi
 
     public class ViewHolder extends RecyclerView.ViewHolder
     {
-        TextView Date;
-        TextView Content;
+        TextView Date,Content,Year,Division;
         //TextView Noticeid;
         ImageButton imageButton;
 
         public ViewHolder(final View itemView)        // represents indiv list items
         {
             super(itemView);
+            Year = itemView.findViewById(R.id.year);
+            Division = itemView.findViewById(R.id.division);
             Date = itemView.findViewById(R.id.Date);
             Content = itemView.findViewById(R.id.Content);
             //Noticeid = itemView.findViewById(R.id.notice_id);

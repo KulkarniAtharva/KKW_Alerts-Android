@@ -1,0 +1,48 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/about"
+            android:title="About"
+            android:icon="@drawable/about" />
+        <item
+            android:id="@+id/sell_books"
+            android:title="Sell Books"
+            android:icon="@drawable/sell" />
+        <item
+            android:id="@+id/buy_books"
+            android:title="Buy Books"
+            android:icon="@drawable/buy" />
+        <item
+            android:id="@+id/quiz"
+            android:title="Quiz"
+            android:icon="@drawable/star_border" />
+        <item
+            android:id="@+id/settings"
+            android:title="Settings"
+            android:icon="@drawable/settings" />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/report"
+                android:title="Report bugs"
+                android:icon="@drawable/report" />
+            <item
+                android:id="@+id/rate"
+                android:title="Rate Us"
+                android:icon="@drawable/rate" />
+            <item
+                android:id="@+id/share"
+                android:title="Share"
+                android:icon="@drawable/share" />
+            <item
+                android:id="@+id/logout"
+                android:title="Logout"
+                android:icon="@drawable/logout" />
+        </menu>
+    </item>
+
+</menu>

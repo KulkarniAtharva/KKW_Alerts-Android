@@ -1,32 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:livebutton="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FDFDFD"
-    android:orientation="vertical">
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+        app:layout_constraintTop_toTopOf="parent">
+        <include layout="@layout/custom_toolbar_other_activities"/>
+    </LinearLayout>
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical"
+            android:fillViewport="true"
+            android:fadingEdge="vertical"
+            android:scrollbars="vertical"
+            android:scrollbarSize="2dp"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarStyle="insideOverlay">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
         	            android:layout_width="350dp"
-        	            android:layout_height="100dp"
-                        android:layout_marginLeft="15dp"
+        	            android:layout_height="wrap_content"
         	            android:hint="Title"
-                        android:textColorHint="@color/green"
         	            app:counterEnabled="true"
-        	            app:counterMaxLength="50"
+        	            app:counterMaxLength="30"
                         app:endIconDrawable="@drawable/title"
+                        android:textColorHint="@color/blue"
         	            app:endIconMode="custom"
-        	            app:errorEnabled="true"
-        	            app:helperText="Title of Assignment"
-                        app:helperTextEnabled="true">
+        	            app:errorEnabled="true">
 
         	            <com.google.android.material.textfield.TextInputEditText
         	                android:layout_width="match_parent"
@@ -34,83 +51,82 @@
                             android:id="@+id/title"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:text="GIVEN DATE :-"
-            android:textSize="20dp"
-            android:textColor="@color/green"
-            android:textStyle="bold|italic" />
-
-        <TextView
-            android:id="@+id/given_date"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="100dp"
-            android:layout_weight="1"
-            android:textAlignment="center" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="1"
-            android:text="DUE DATE :-"
-            android:textSize="20dp"
-            android:textColor="@color/green"
-            android:textStyle="bold|italic" />
+            android:hint="Description"
+            app:endIconDrawable="@drawable/description"
+            android:textColorHint="@color/blue"
+            app:endIconMode="custom">
 
-        <TextView
-            android:layout_width="100dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/description"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:id="@+id/due_date_txt"
-            android:text="No date chosen"/>
-        <ImageButton
-            android:id="@+id/due_date_btn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginRight="60dp"
-            android:scaleType="fitXY"
-            android:background="@android:color/transparent"
-            android:src="@drawable/calendar"/>
+            android:hint="Due Date"
+            app:endIconDrawable="@drawable/date"
+            android:textColorHint="@color/blue"
+            app:endIconMode="custom"
+            android:layout_marginTop="20dp">
 
-    </LinearLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/due_date"
+                android:inputType="date"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <ru.katso.livebutton.LiveButton
-        android:id="@+id/choose"
-        android:layout_width="330dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="80dp"
-        android:background="#F40707"
-        android:shadowColor="#b16262"
-        android:text="CHOOSE ASSIGNMENT"
-        android:textColor="@android:color/black"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        livebutton:corners="4dp"
-        livebutton:normalHeight="15dp"
-        livebutton:pressedHeight="1dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:hint="Select Year"
+                android:textColorHint="@color/blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/year"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="155dp"
+                android:layout_height="wrap_content"
+                android:hint="Select Division"
+                android:textColorHint="@color/blue"
+                android:layout_marginStart="30dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/division"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:text="Choose File"
+            android:id="@+id/choose"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:foreground="?attr/selectableItemBackgroundBorderless"/>
 
     <TextView
         android:id="@+id/notification"
@@ -121,34 +137,8 @@
         android:text="No file chosen"
         android:textSize="15dp" />
 
-    <ru.katso.livebutton.LiveButton
-        android:id="@+id/upload"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:background="#F40707"
-        android:shadowColor="#b16262"
-        android:text="UPLOAD"
-        android:textColor="@android:color/black"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        livebutton:corners="4dp"
-        livebutton:normalHeight="16dp"
-        livebutton:pressedHeight="1dp" />
+     </LinearLayout>
+        </ScrollView>
 
-    <TextView
-        android:id="@+id/progress_percent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center" />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

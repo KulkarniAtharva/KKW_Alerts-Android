@@ -1,13 +1,20 @@
 package com.example.test3;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +22,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
@@ -27,7 +35,15 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.roger.catloadinglibrary.CatLoadingView;
+
+import java.io.IOException;
+import java.net.URL;
+
+import com.bumptech.glide.annotation.GlideModule;
+import com.bumptech.glide.module.AppGlideModule;
+import com.bumptech.glide.Glide;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class student_activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
@@ -35,13 +51,13 @@ public class student_activity extends AppCompatActivity implements NavigationVie
    // MyObjects ob = new MyObjects();
     protected FirebaseAuth mAuth;
     GoogleSignInClient mGoogleSignInClient;
-    TextView textView;
     GridLayout gridLayout;
     String personName;
     Toolbar toolbar;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
-    CatLoadingView mView;
+    String personphotoUri,personEmail;
+    CircleImageView userphoto;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
@@ -60,17 +76,37 @@ public class student_activity extends AppCompatActivity implements NavigationVie
 
         // account = GoogleSignIn.getLastSignedInAccount(this);
         personName = mAuth.getCurrentUser().getDisplayName();
-       // personPhoto = MyObjects.getInstance().firebaseUser.getPhotoUrl();
+        //personphotoUri = MyObjects.getInstance().getPhotoUrl();
+        personphotoUri = MyObjects.getInstance().personphotoUri;
+        personEmail = MyObjects.getInstance().user_email;
 
-        textView = (TextView)findViewById(R.id.name);
-        textView.setText(personName);
+        //textView = (TextView)findViewById(R.id.name);
+        //textView.setText(personName);
+
+        //imageView.setImageURI(personphotoUri);
+
+            //Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), personphotoUri);
+       // imageView.setImageURI(personphotoUri);
+
+
+
+
 
         gridLayout = (GridLayout)findViewById(R.id.grid);
         setSingleEvent(gridLayout);
 
         //if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         //{
-        getWindow().setStatusBarColor(getResources().getColor(R.color.green, this.getTheme()));
+        //getWindow().setStatusBarColor(getResources().getColor(R.color.darkblue, this.getTheme()));
+        // getWindow().setNavigationBarColor(getResources().getColor(R.color.darkblue,this.getTheme()));
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);  // to make status bar translucent
+
+       // getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        //getWindow().setStatusBarColor(Color.TRANSPARENT);
+
+
+
         // }
         //else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
         //{
@@ -78,8 +114,13 @@ public class student_activity extends AppCompatActivity implements NavigationVie
         // }
 
         toolbar = findViewById(R.id.tool_Bar);
-        setSupportActionBar(toolbar);
 
+
+       // TextView textView = toolbar.findViewById(R.id.toolbar_title);
+        //textView.setText("");
+
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
         /*  need to set this in android manifest otherwise error comes as
 
             Do not request Window.FEATURE_SUPPORT_ACTION_BAR and set windowActionBar to false in your theme to use a toolbar instead
@@ -92,10 +133,25 @@ public class student_activity extends AppCompatActivity implements NavigationVie
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout,toolbar, R.string.open, R.string.close);
 
         drawerLayout.addDrawerListener(toggle);
+        toggle.setDrawerIndicatorEnabled(true);
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white,getTheme()));  // hamburger icon colour
         toggle.syncState();
+
+
 
         navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View hView =  navigationView.getHeaderView(0);
+
+        TextView username = (TextView)hView.findViewById(R.id.user_name);
+        username.setText(personName);
+        TextView email = (TextView)hView.findViewById(R.id.email);
+        email.setText(personEmail);
+
+        userphoto = hView.findViewById(R.id.user_photo);
+
+        Glide.with(this).load(personphotoUri).centerCrop().into(userphoto);
     }
 
     @Override
@@ -108,9 +164,35 @@ public class student_activity extends AppCompatActivity implements NavigationVie
             case R.id.rate:   rate(); break;
             case R.id.share:   share();  break;
             case R.id.logout:   signOut();  break;
+            case R.id.sell_books:  sell_books();  break;
+            case R.id.buy_books:  buy_books();  break;
+            case R.id.settings: settings();  break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.student_activity_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        // Handle action bar item clicks here. The action bar will automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        if(id == R.id.notification)
+        {
+
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     /*@Override
@@ -187,7 +269,12 @@ public class student_activity extends AppCompatActivity implements NavigationVie
     }
     void rate()
     {
-        Intent intent = new Intent(this, rate.class);
+
+    }
+
+    void settings()
+    {
+        Intent intent = new Intent(this,settings.class);
         startActivity(intent);
     }
     void share()
@@ -216,6 +303,18 @@ public class student_activity extends AppCompatActivity implements NavigationVie
     void timetable()
     {
         Intent intent = new Intent(this, timetable.class);
+        startActivity(intent);
+    }
+
+    void sell_books()
+    {
+        Intent intent = new Intent(this, sell_books.class);
+        startActivity(intent);
+    }
+
+    void buy_books()
+    {
+        Intent intent = new Intent(this, buy_books.class);
         startActivity(intent);
     }
 
@@ -251,11 +350,88 @@ public class student_activity extends AppCompatActivity implements NavigationVie
 
         //Toast.makeText(MainActivity.this,"Back Button is clicked.", Toast.LENGTH_LONG).show();
 
-        super.onBackPressed();
-        Intent a = new Intent(Intent.ACTION_MAIN);
-        a.addCategory(Intent.CATEGORY_HOME);
-        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(a);
+
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        // Set the message show for the Alert time
+        // builder.setMessage("Are you sure want to Exit ?");
+
+        // Set Alert Title
+        // builder.setTitle("Exit ?");
+
+        // Set Cancelable true for when the user clicks on the outside the Dialog Box then it will close
+        builder.setCancelable(true);
+
+        /*
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener()
+        {
+             @Override
+             public void onClick(DialogInterface dialog, int which)
+             {
+                  //onBackPressed();
+                 //dialog.cancel();
+                  Intent a = new Intent(Intent.ACTION_MAIN);
+                  a.addCategory(Intent.CATEGORY_HOME);
+                  a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                  startActivity(a);
+             }
+        });
+
+        // Set the Negative button with No name OnClickListener method is use of DialogInterface interface.
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                // If user click no then dialog box is canceled.
+                dialog.cancel();
+            }
+        });*/
+
+
+
+        // Create the Alert dialog
+        final AlertDialog alertDialog = builder.create();
+
+        LayoutInflater inflater = getLayoutInflater();
+        View dialoglayout = inflater.inflate(R.layout.exit_dialog, null);
+
+        alertDialog.setView(dialoglayout);
+
+        // Show the Alert Dialog box
+        alertDialog.show();
+
+        Button yes = dialoglayout.findViewById(R.id.yes);
+        Button no = dialoglayout.findViewById(R.id.no);
+
+        yes.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                alertDialog.dismiss();
+                Intent a = new Intent(Intent.ACTION_MAIN);
+                a.addCategory(Intent.CATEGORY_HOME);
+                a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(a);
+            }
+        });
+
+        no.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                alertDialog.dismiss();
+            }
+        });
+
+        // builder.
+
+
+
+
     }
 
     protected void UpdateUI(FirebaseUser account)
@@ -269,3 +445,20 @@ public class student_activity extends AppCompatActivity implements NavigationVie
 
     }
 }
+
+ /*<RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_weight="2"
+                    android:background="#0F2C5E">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@android:color/white"
+                        android:textSize="34sp" />
+
+                </RelativeLayout>*/

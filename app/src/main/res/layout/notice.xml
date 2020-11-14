@@ -1,26 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FDFDFD"
-    android:orientation="vertical">
+    android:background="@color/white">
+
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:orientation="vertical"
+    android:scrollbars="vertical"
+    android:scrollbarSize="2dp"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="350dp"
-            android:layout_height="200dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="60dp"
-            android:hint="Notice"
-            android:textColorHint="@color/green"
+            android:layout_height="wrap_content"
+            android:hint="Title"
+            android:textColorHint="@color/blue"
             app:counterEnabled="true"
-            app:counterMaxLength="500"
-            app:endIconDrawable="@drawable/subject"
+            app:counterMaxLength="40"
+            app:endIconDrawable="@drawable/title"
             app:endIconMode="custom"
             app:errorEnabled="true"
             app:helperText="Subject of Notice"
@@ -29,23 +39,88 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/title"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Notice"
+            android:textColorHint="@color/blue"
+            app:endIconDrawable="@drawable/subject"
+            app:endIconMode="custom"
+            app:helperText="Notice"
+            app:helperTextEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/notice"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:hint="Select Year"
+                android:textColorHint="@color/blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/year"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="155dp"
+                android:layout_height="wrap_content"
+                android:hint="Select Division"
+                android:textColorHint="@color/blue"
+                android:layout_marginLeft="30dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/division"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:text="SEND"
+        android:textColor="@color/white"
         android:id="@+id/sendbtn"
         android:layout_gravity="center"
-        android:background="@color/green"
-        android:drawableRight="@drawable/send"/>
+        android:background="@drawable/button_background"
+        android:drawableEnd="@drawable/send"
+        android:layout_marginTop="100dp"
+        android:paddingEnd="10dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"/>
 
 </LinearLayout>
 
+</ScrollView>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/history"
+        android:contentDescription="History"
+        android:backgroundTint="@color/deepskyblue"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="60dp"
+        android:layout_gravity="end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-
-
+</androidx.constraintlayout.widget.ConstraintLayout>
