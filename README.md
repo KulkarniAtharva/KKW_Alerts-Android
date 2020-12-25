@@ -97,11 +97,13 @@ An educational app developed for teachers and students which includes uploading 
 
 <BR>
 
-## 📱 Contact - Let's become friend  🤝
-- [Portfolio Website](https://kulkarniatharva.github.io/)
-- [Github](https://github.com/KulkarniAtharva)
-- [LinkedIn](https://www.linkedin.com/in/atharva-kulkarni-146279187/)
-- [Facebook](https://www.facebook.com/atharva.kulkarni.96343/)
+## 📱 Creators  🤝
+
+  With the current levels of globalization it's necessary to be able to communicate one's ideas to the opposite person in an understandable way. So with that we are working in a team of four for our Mini Project.
+- [Atharva Kulkarni](https://kulkarniatharva.github.io)
+- [Adwait](https://github.com/adwaitgondhalekar)
+- [Radha Mujumdar](https://github.com/radhamujumdar)
+- [Shreya Kedia](https://github.com/shreya-kedia)
 
 
 
