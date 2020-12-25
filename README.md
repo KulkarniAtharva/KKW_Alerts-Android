@@ -99,9 +99,9 @@ An educational app developed for teachers and students which includes uploading 
 
 ## 📱 Creators  🤝
 
-  With the current levels of globalization it's necessary to be able to communicate one's ideas to the opposite person in an understandable way. So with that we are working in a team of four for our Mini Project.
+  With the current levels of globalization it's necessary to be able to communicate one's ideas to the opposite person in an understandable way. <BR> So with that we are working in a team of four for our Mini Project.
 - [Atharva Kulkarni](https://kulkarniatharva.github.io)
-- [Adwait](https://github.com/adwaitgondhalekar)
+- [Adwait Gondhalekar](https://github.com/adwaitgondhalekar)
 - [Radha Mujumdar](https://github.com/radhamujumdar)
 - [Shreya Kedia](https://github.com/shreya-kedia)
 
