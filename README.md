@@ -1,4 +1,4 @@
-# KKW Alerts
+# <div align="center">KKW Alerts</div>
 
 An educational app developed for teachers and students which includes uploading and downloading of assignments and notices.
 
