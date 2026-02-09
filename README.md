@@ -95,17 +95,6 @@ An educational app developed for teachers and students which includes uploading 
 - SwipeRefresh
 - BottomSheet
 
-<BR>
-
-## 📱 Creators  🤝
-
-  With the current levels of globalization it's necessary to be able to communicate one's ideas to the opposite person in an understandable way. <BR> So with that we are working in a team of 4 towards our Mini Project.
-- [Atharva Kulkarni](https://kulkarniatharva.github.io)
-- [Adwait Gondhalekar](https://github.com/adwaitgondhalekar)
-- [Radha Mujumdar](https://github.com/radhamujumdar)
-- [Shreya Kedia](https://github.com/shreya-kedia)
-
-
 
 <BR><BR>
   
